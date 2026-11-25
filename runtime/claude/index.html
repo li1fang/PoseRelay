@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>称重食堂 · 小克三姿态</title>
+<style>
+  :root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #1d2025; color: #f4f1ed; }
+  main { width: min(calc(100% - 2rem), 600px); margin: 1.5rem auto; }
+  h1 { font-size: 1.35rem; margin: 0 0 .8rem; }
+  canvas { display: block; width: 100%; height: auto; border-radius: .6rem; background: #b8c0d4; }
+  nav, .controls { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin: .7rem 0; }
+  button, input, select { font: inherit; }
+  button, select { padding: .35rem .55rem; }
+  input { width: 5rem; }
+  output { display: block; color: #e6c4ae; min-height: 1.5em; margin-top: .5rem; }
+</style>
+<main>
+  <h1>小克三姿态</h1>
+  <canvas id="figure" width="512" height="512" aria-label="小克军装动画"></canvas>
+  <output id="status" aria-live="polite">载入中</output>
+  <nav aria-label="姿态">
+    <button data-pose="D" disabled>正面</button>
+    <button data-pose="A" disabled>左看</button>
+    <button data-pose="B" disabled>右看</button>
+    <button id="cancel" disabled>取消转场</button>
+  </nav>
+  <div class="controls">
+    <button id="voice" disabled>试听台词</button>
+    <button id="blink" disabled>眨眼</button>
+    <label>呼吸 <select id="breath" disabled><option value="low">低</option><option value="medium" selected>中</option><option value="high">高</option></select></label>
+    <label>受击 <select id="impact" disabled><option value="low">轻</option><option value="medium">中</option><option value="high">重</option></select></label>
+    <button id="hit" disabled>触发受击</button>
+  </div>
+  <div class="controls">
+    <label>眨眼时长（毫秒） <input id="duration" type="number" min="100" max="700" step="10" value="260" disabled></label>
+    <label>眨眼间隔（毫秒） <input id="interval" type="number" min="500" max="12000" step="100" value="4100" disabled></label>
+  </div>
+</main>
+<script type="module" src="stage.mjs"></script>
+</html>

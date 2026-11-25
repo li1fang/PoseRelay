@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>称重食堂 v1 · 角色样例</title>
+<style>
+  :root { color-scheme: dark; font: 16px/1.5 system-ui,sans-serif; background: #1d2025; color: #f4f1ed; }
+  main { width: min(94vw, 650px); margin: 1rem auto 2rem; }
+  h1 { font-size: 1.35rem; }
+  #portrait { margin: .7rem 0; min-height: 4rem; display: grid; justify-items: center; }
+  canvas { display: block; max-width: 100%; max-height: 66dvh; width: auto; height: auto; border-radius: .5rem; }
+  .controls { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem; margin-block: .55rem; }
+  button, select, input { font: inherit; }
+  button, select { padding: .35rem .5rem; }
+  #status { color: #e6c4ae; }
+</style>
+<main>
+  <h1>角色样例</h1>
+  <div class="controls">
+    <label>外观 <select id="look"></select></label>
+    <label>画幅 <select id="aspect"></select></label>
+  </div>
+  <div id="portrait" aria-label="角色预览"></div>
+  <output id="status" aria-live="polite">载入中</output>
+  <div class="controls">
+    <label>口型 <input id="mouth" type="range" min="0" max="12" value="0"></label>
+    <label>呼吸 <select id="breath"><option value="low">低</option><option value="medium" selected>中</option><option value="high">高</option></select></label>
+    <button id="hit">触发受击</button>
+    <button id="blink">眨眼</button>
+  </div>
+</main>
+<script type="module" src="gallery.mjs"></script>
+</html>

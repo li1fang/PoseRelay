@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI RTS Live2D Soft Body Event v1",
+  "type": "object",
+  "required": ["version", "type", "instanceId", "eventId", "atMs", "intensity"],
+  "properties": {
+    "version": {"const": 1},
+    "type": {"enum": ["softbody.impact", "softbody.breath"]},
+    "instanceId": {"type": "string", "minLength": 1, "maxLength": 128},
+    "eventId": {"type": "string", "minLength": 1, "maxLength": 128},
+    "atMs": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+    "intensity": {"enum": ["low", "medium", "high"]},
+    "side": {"enum": ["left", "right", "both"], "default": "both"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"const": "softbody.breath"}}},
+      "then": {"not": {"required": ["side"]}}
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "receipt": {
+      "type": "object",
+      "required": ["version", "instanceId", "eventId", "status"],
+      "properties": {
+        "version": {"const": 1},
+        "instanceId": {"type": "string", "minLength": 1},
+        "eventId": {"type": "string", "minLength": 1},
+        "status": {"enum": ["accepted", "duplicate", "unsupported", "expired", "event_id_conflict", "invalid"]},
+        "reason": {"enum": ["level_unavailable", "side_unavailable", "view_unavailable", "region_not_visible"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "unsupported"}}},
+          "then": {"required": ["reason"]},
+          "else": {"not": {"required": ["reason"]}}
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

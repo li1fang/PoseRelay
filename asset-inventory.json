@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "examples": {
+    "claude": {
+      "sourceManifestSha256": "548724333a8c38f9d6dcc80adc5b610d544c3d2e3d9eaa6be996466991dfeb26",
+      "version": 1,
+      "kind": "claude",
+      "manifestSha256": "548724333a8c38f9d6dcc80adc5b610d544c3d2e3d9eaa6be996466991dfeb26",
+      "files": {
+        "A/base.png": "e8277fa4c78c177704022833b6a10eb7f5b03877b0bf38f09fd6e6f3358fa764",
+        "A/eyes.png": "1690a75fe9dbf0f0fc6bb2f03c0d9d729fbc08c49025510fe1574b7a18331a07",
+        "A/mouth.png": "6d11f47515a2b27cc9ac41d12a007c7ac038af6ad2c656f81e5424487e7e4560",
+        "A/fringe.png": "2389cde53f795790f59757ffd2f74363d05597db826c41a4af3cc62a4d9e6730",
+        "A/left.f32": "fcaed80c4ee6b8ca8fea95072a89558c9af4508a9dd9a93f95536f4caaad57f6",
+        "A/right.f32": "dddfce8d65966ce52d5e8945a9693f1910edf11c95bf48794209a9362443dbf6",
+        "B/base.png": "ea8db1b26a5d31b358922fc540de20d684aebcad54dddf4351c33f0fff193603",
+        "B/eyes.png": "c7ae733d3c580966ef8233bc8940ea8032c131aa175d92d3233c1534889b9acb",
+        "B/mouth.png": "5d53da63aecf76f39b06af0464dc824a0bbb41057cdf2661ca884e9acde77d98",
+        "B/fringe.png": "e2171220f41bbca6c7e37d4f4d7f5e9d9c03e10f1ba5d495dda081761065b88b",
+        "B/left.f32": "11bd6ac00d52003302e5c8bcab8d98e56d1f2b8923bdecf0dacd80b50c97b850",
+        "B/right.f32": "e0ed9ff68d5dd7df95e37db494e59677ab31806f477f4b9f3922237feb0895d9",
+        "D/base.png": "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e",
+        "D/eyes.png": "40da59123a85f36530d21154c30bff0544d619218856cfb3c53faa5cedb89440",
+        "D/mouth.png": "bf6c7000d79b026f611a300bf50c03aececbd56c19f67d4e91b918d20eaa75d7",
+        "D/fringe.png": "77ca3bf060c5747313fc05c6a5701de07ea1b2149756fc61d64eb161d23689b8",
+        "D/left.f32": "cd16bac22cecc82e2ae146b0ce3e9abc028e8e59fc0dc1baef957711a064cc39",
+        "D/right.f32": "90bbba61269235efcf9936a8e2bb6e98627f08010319f05557b7d16756c95372",
+        "a-to-b.mp4": "f23f169b5f8573eb24cf10b05b0747cc79644ddf1b05046ed3e23b76c751b5b9",
+        "a-to-d.mp4": "e4f2681765dafd27c76d63d865292edaf6c4e248e94a15d1289529efc6f99212",
+        "b-to-a.mp4": "e84b0a31efba4ffc0e9ac081183a64d31de0e282e4c360f0738b3a47d4d7591e",
+        "b-to-d.mp4": "bcbe2e477b500a36c88dffe1f2e79ed02cb44ca26d1ae1f027a634091d4b22a4",
+        "d-to-a.mp4": "1b401de2d4261e278260f401a44823d3a5c55d5ac3267b59bc7d03039f66a255",
+        "d-to-b.mp4": "a3756fba1be63637ade7e371331bbb6a8c460bab020621442cac671e33aaf870",
+        "short.wav": "3f9af8672da7ea18de698172cd464760cf45e0c0d642836bc5fb5693a8fb7cc4",
+        "long.wav": "445cd8905df6363abcf58d4985612ef9ed9cf61903ca9d81e2986b32ce75d7bd"
+      },
+      "items": {
+        "pose/A": {
+          "sha256": "77a6a96d51b566b5697d60c1f695eeb85349c655f1fcf2a6dc2fb89366626372",
+          "media": "A/base.png",
+          "check": "说完闭口、眨眼和刘海、呼吸和受击、手脸及衣缘"
+        },
+        "pose/B": {
+          "sha256": "069ee3ce946fdf982d481bd39ba4327c248318273afd093a6b4f42d562279fc2",
+          "media": "B/base.png",
+          "check": "说完闭口、眨眼和刘海、呼吸和受击、手脸及衣缘"
+        },
+        "pose/D": {
+          "sha256": "c1008412eb4f41b83f7e237a7714996071c7ebf9b0994b51746c525eba7e8bd1",
+          "media": "D/base.png",
+          "check": "说完闭口、眨眼和刘海、呼吸和受击、手脸及衣缘"
+        },
+        "transition/AB": {
+          "sha256": "d34ebbd38535bb7cc26fa2e1613acaf5f041cbde3e65b65eb91826d722ebad32",
+          "media": "a-to-b.mp4",
+          "seconds": 5.167,
+          "check": "原速看开始、全程和抵达，检查眼睑、扣位、手与衣服"
+        },
+        "transition/AD": {
+          "sha256": "dd89f2c5100b319c21893a33d1ae2b287d94c031a1102af0ccc5ba3c2b0290ee",
+          "media": "a-to-d.mp4",
+          "seconds": 5.167,
+          "check": "原速看开始、全程和抵达，检查眼睑、扣位、手与衣服"
+        },
+        "transition/BA": {
+          "sha256": "1c5510ac3216f40526a4801294127ad87476239bf055a7b2aa2041a6723efb4f",
+          "media": "b-to-a.mp4",
+          "seconds": 5.167,
+          "check": "原速看开始、全程和抵达，检查眼睑、扣位、手与衣服"
+        },
+        "transition/BD": {
+          "sha256": "1c601bca1b41b27d3dbc0f33a595958cd0b24fb768197e8462d17c1e84cb1486",
+          "media": "b-to-d.mp4",
+          "seconds": 5.167,
+          "check": "原速看开始、全程和抵达，检查眼睑、扣位、手与衣服"
+        },
+        "transition/DA": {
+          "sha256": "a0389d95959f77e6339080897e98c979cbd46622b6c30f595dea94f525b87433",
+          "media": "d-to-a.mp4",
+          "seconds": 5.167,
+          "check": "原速看开始、全程和抵达，检查眼睑、扣位、手与衣服"
+        },
+        "transition/DB": {
+          "sha256": "89f50626de7542dc199e8e2354c303211f59aa2e490ad1fdd1febcbf6d83b0c9",
+          "media": "d-to-b.mp4",
+          "seconds": 5.167,
+          "check": "原速看开始、全程和抵达，检查眼睑、扣位、手与衣服"
+        }
+      }
+    },
+    "portraits": {
+      "sourceManifestSha256": "db85a86ccb25617091dd62bb1cd738ff1b3e4c17b2a55d6bc40289c1126a8d17",
+      "version": 1,
+      "kind": "portraits",
+      "manifestSha256": "0999ab9bbfa93d9af146cfb9107ea8f8ed092c79bd16c7dd375346714fdea4a6",
+      "files": {
+        "claude-uniform/square-bust/idle.png": "d0936be8a6ea8e2426ca37d00d5e6ba10edf0c83047674bee3c2bf9f6219020f",
+        "claude-uniform/square-bust/mouth.png": "b9a9489d10b9654928a8b2bda4873c03ff6ced89c84ae2db51c75c80174c1f86",
+        "claude-uniform/square-bust/right.f32": "8bccadc331f4b975ed741318952dd29e0cf068de303dafa9a9cadb2c6a112079",
+        "claude-uniform/square-bust/left.f32": "a11e315474bb1d1d6693fa18458b5d3040ec79da000d6f6ccd8b522625115f83",
+        "claude-uniform/wide-head/idle.png": "0035892c9c28b442842fc4c3bcc62f5f0c82cf380354ed95ea80f733264b1788",
+        "claude-uniform/wide-head/mouth.png": "80d12015de354487aefb44b37a241be428c0607205800aa2940fe8e0eacfe7be",
+        "claude-uniform/tall-half/idle.png": "1196c16b985edbcf0cd9e534f8bd65d63a688be0b37099527f8efea47ddca9ef",
+        "claude-uniform/tall-half/mouth.png": "be262ed71504a0bb22cd3b6920aa253da93c22b1d241c2637e6e68aeca079452",
+        "claude-uniform/tall-half/right.f32": "9222f3c09fb040aeb600c0e54094d6a37b43e5b3fccdd4bfb6beb048237dcb00",
+        "claude-uniform/tall-half/left.f32": "7dbf9c7ba47aa0486e10549e39e83e795a4e47da90846f2c144107bfbf5929d7",
+        "claude-orange/square-bust/idle.png": "0b11c95491099d141debed82c6b09ff6627182618762a3d64e82b0caaacd62d3",
+        "claude-orange/square-bust/mouth.png": "a173c340fe786cc5396f56b802c3900e72fdc8183f8a0295775d69f5156aae4a",
+        "claude-orange/square-bust/right.f32": "25f877b59436eb23b92b26fc8ffb610fe6f6bbf01d4d4b24e6fa0b5ce16d9605",
+        "claude-orange/square-bust/left.f32": "c2e430eb9bc308534f724934a6da3fd8d3d6af537320f6aa843acb21a63b186f",
+        "claude-orange/wide-head/idle.png": "37928ddf6b5772b694e194db8faa4d5b57209459cfe938d6d24b835cf22abf6e",
+        "claude-orange/wide-head/mouth.png": "9944801be43d855d9808b450f9d8ce897d765096733335970a87df6c31530f94",
+        "claude-orange/tall-half/idle.png": "4b7c8647430f8d622a53fadbdec0ee4ffcc6b95837bf777e826e948399c06ac4",
+        "claude-orange/tall-half/mouth.png": "0cd00b5b1aa5c03254c8effce680ec6ac22be540460590344027d6597df92d47",
+        "claude-orange/tall-half/right.f32": "f5141fe3e60da8a69363857f766c48bb4ac6aeac0d6ebbb7666f950a11c0a3db",
+        "claude-orange/tall-half/left.f32": "a8528bcb339a6198702f33bf65fce9d1ecaafb829978e42a3941e288f875d515",
+        "dragon-swim/square-bust/idle.png": "6564cb3b7d05dc927e92c80bb4a3ee1a22dc996f109368c751e3e0e4b35819e9",
+        "dragon-swim/square-bust/mouth.png": "d372f14cf443fdf7c72eeb49fe71c9b5ee9ab440fe6873875bb755960cb2b6c8",
+        "dragon-swim/square-bust/right.f32": "cd93670b571b5c6621e147691b8d0dcb7f4ef845f7d749bdd28e52f13b002357",
+        "dragon-swim/square-bust/left.f32": "063f5cc404e8e9bfac74a74ece4855721b15463b7da63d6a95d5b96c8b3517de",
+        "dragon-swim/wide-head/idle.png": "2f181fe0e7c68953db7f0abd7e9d64f8002745517acb58a58edf61f1fd7df7c7",
+        "dragon-swim/wide-head/mouth.png": "76a043745ee8494ed3e7ad0c7ca4470947a9a51d9ee76b42a12a652b47ad243e",
+        "dragon-swim/tall-half/idle.png": "871678de021093fd9881fe82baae2976d152e63103ab16caee0adb2fe56f4072",
+        "dragon-swim/tall-half/mouth.png": "d0d7f3317bc113ef8e7dfaf90da5aa96dbaa6998a26b3d961cc387930cfa53bb",
+        "dragon-swim/tall-half/right.f32": "91f24500ea862462cb272c18eb7185d9a0d734965948cd424a4326f3664bba28",
+        "dragon-swim/tall-half/left.f32": "f40ea165a09389260a1ca06bdd5b50de7e05fdea8b61c9a8dbe90cf195cb4823",
+        "grok-default/square-bust/idle.png": "a4c8c182cd7af8b6791a9783f7c23b6799082a6b1cd847f63147c27803018a1e",
+        "grok-default/square-bust/mouth.png": "220303198cf118f387ffedc552e79366850ec9e45f12bfd9b8f51acb89327b48",
+        "grok-default/square-bust/right.f32": "587f258ddcfbadced64d99dda56dc2e87dc8fb0dd470486fc3781a4f91971242",
+        "grok-default/square-bust/left.f32": "85359cc11c194b563affb7cec609928f267fa3ef4e21610c025f0cb575d18f09",
+        "grok-default/square-bust/hair.f32": "5ed37d7d551515cd965ae29dcfdb29329ee425ba8b6c18916e4674533d021ad1",
+        "grok-default/square-bust/blink.png": "7d4339f160038d83a3fb0dc7bba5d2466a5f0bb1cdeb56a944e4586327b7854c",
+        "grok-default/wide-head/idle.png": "9acfa39a2d63e94ca36d2a5359df84a6f50802c374d0a7457c8c625d7e652725",
+        "grok-default/wide-head/mouth.png": "59ea3650d610b21eb664391ff52352afbe67207846aaa43a661eef8e2e8008a1",
+        "grok-default/tall-half/idle.png": "839c2c0a10b16d6dc435b1ba031f1cfedda1f38643f66e2ff9cb4ce0473f717f",
+        "grok-default/tall-half/mouth.png": "2dfa711966dd32539b1f947567cdfe45b9716795135168fd42c4e92d75335787",
+        "grok-default/tall-half/right.f32": "59fc5b150740e272c74a7eb9e0086ddbdd2a8496c175ef45796407437441a341",
+        "grok-default/tall-half/left.f32": "08d1aeff8c21e047e66bd910a4d36519a9a76bb5303bd9e846ddf0a18f28620a",
+        "fatfish-admiral/square-bust/idle.png": "a1aedabddf983e14cd60f06e9dfeae3c4b92eac8d25cdf42af4bef8918bbf9f4",
+        "fatfish-admiral/square-bust/mouth.png": "6c3ff029fcaa6c80e6477a2a2eb0951ea5a41b0d511dd337dd5ab4e47fcff370",
+        "fatfish-admiral/square-bust/right.f32": "34ee165ebdf73b7f8b23e94053add93f6ffe83a84bcd1dde79c07e8173b8f255",
+        "fatfish-admiral/square-bust/left.f32": "fdfd072f8bdd6ec2c6a1dcbf2968ddaa40b09883f5d84cadc76171a50d297e68",
+        "fatfish-admiral/square-bust/hair.f32": "5d4687c6a18bb9631724fd612c6c3ec8f463a03e48f04484bbcbeebf2f251506",
+        "fatfish-admiral/square-bust/blink.png": "7bb0e8bfee24688315ec3768637a3bdf10fbcb8489506dc87409ec95974210c6",
+        "fatfish-admiral/wide-head/idle.png": "e86ef1e1e521ed5bd4537969409794a892fc47ba7d9fbb49c87d25438ad78b9d",
+        "fatfish-admiral/wide-head/mouth.png": "6cd2b3a2076f6f6f89c9b62a4c87648f7cd10cf4651889bf02cd8aebe5c53005",
+        "fatfish-admiral/tall-half/idle.png": "ae4bb18e9af7437c7f4ca6123ddf4ee97a3c57b28ac30feca5eb8f601f3a985b",
+        "fatfish-admiral/tall-half/mouth.png": "acf41eb7af4d828cb998739a3bfb0f8fbf5031ef8e546c182965810e4b690378",
+        "fatfish-admiral/tall-half/right.f32": "f116ba74abcfcd71f9da726bf8772757401da06534ced1de6767e56cfe3256bc",
+        "fatfish-admiral/tall-half/left.f32": "53da5efbebfde57b625991df38d4a7ac9b7bda91b7c49ca9b2cc951c3932201c",
+        "fatfish-zip/square-bust/idle.png": "fc125189eb3ee1441fb564966b9725eb1237654ee741ce2ffa8c5f24b4d4bcaf",
+        "fatfish-zip/square-bust/mouth.png": "e136fb994c74d178460bf89cf1b7b1e6708dc3acf86b536fb796b6dcba795b67",
+        "fatfish-zip/square-bust/right.f32": "7b50a00ce98273ead496c178e6b2670fd461e5b18bffc079817f3c07eed1102e",
+        "fatfish-zip/square-bust/left.f32": "d353e8496ab4189c6abc32d817571287aad5ef55335c4808eb9762356bcbdb9d",
+        "fatfish-zip/wide-head/idle.png": "6ebf7c581870807e8c5e55eb0c81b36769e81ed0a6f9ef2087ca21296e619528",
+        "fatfish-zip/wide-head/mouth.png": "65ef90c1cb599cc8eaaf2de84ff46b2c26bb2bdcadb7df52f9544761ef5ac88c",
+        "fatfish-zip/tall-half/idle.png": "3e9135929b2d00cca9826665d347c94e2310dcce1621599242b89f33fe6719d8",
+        "fatfish-zip/tall-half/mouth.png": "39583a237cd953a6b644eab42d1c2f01c7faf72414495701260ce1d5c0ccb2c7",
+        "fatfish-zip/tall-half/right.f32": "596864c454f3a29275df3f38f2b68bdabab9d97efb839f472fd5dc50700bfa31",
+        "fatfish-zip/tall-half/left.f32": "ead8957d60928f68ce2493e25acd4139164c85394dcc1618d99a4fff3c49f432",
+        "fatfish-sailor/square-bust/idle.png": "1bce28be0495186cb096e08d0efce3a708f9f77112178783ec91363eb2b3063e",
+        "fatfish-sailor/square-bust/mouth.png": "5d2f81162bbdeb138ce1f850c0dfe96284b8f438183062e01b6c49be93fc5623",
+        "fatfish-sailor/square-bust/right.f32": "9fa3a2e085471b982f18cc0739f290294520f8d68c5eee3f1ef98bd69aa611e7",
+        "fatfish-sailor/square-bust/left.f32": "83a11375daff180733d360653483315256b42221d71944d05f915b560f684857",
+        "fatfish-sailor/wide-head/idle.png": "154ad0f5aedc18e0ad57ad20ed0090fb8b8191239920a0cda7641765fdef2ef6",
+        "fatfish-sailor/wide-head/mouth.png": "fd1776f6e6fe6e424c1f40a062a3d3014d301491cb48f460665f6ba094c4c682",
+        "fatfish-sailor/tall-half/idle.png": "979506d69de9d785a3f45ff1b12003860b73da298d9bd6abdece610d01ac4b55",
+        "fatfish-sailor/tall-half/mouth.png": "cafb388f7d8d93dcdbbff2dba70220796508fd1f658232441d0e40e97ff8cf1f",
+        "fatfish-sailor/tall-half/right.f32": "b6ae23f697e949d6e719ea676f18a41b6b9e8cb243565156378e2b3af97a77f0",
+        "fatfish-sailor/tall-half/left.f32": "3f5b55f485e257fdc6d5b2f52ea5aadd7247da9d3665fab02677ed210a0e3268",
+        "event.schema.json": "ae3b616c7248cc394770b419972eadc87be91ba47646c8132d503eb1bab5dd60",
+        "blink-event.schema.json": "ac77f79304bc5d27f2b6f5465ed22092869eab6c1176a044e0e04fa7607b7464"
+      },
+      "items": {
+        "claude/uniform/1:1": {
+          "sha256": "dc7aa4ce392df7396e7243a1a38be904055ca25c68a59286d6dbf1064343648c",
+          "media": "claude-uniform/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "claude/uniform/2:1": {
+          "sha256": "beffd2caf24eff840af826e65df585d17f64c3f735897e233b57c344e59c6ec5",
+          "media": "claude-uniform/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "claude/uniform/1:2": {
+          "sha256": "6c9cf39fe30d7b383717827b792ff322fa12bee632d56c679aaa2141c39c3a7a",
+          "media": "claude-uniform/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "claude/swimwear/1:1": {
+          "sha256": "86bdb227788d05b3f68f292433250dee0e96d631deeaa2e3685b3b1f8e485b63",
+          "media": "claude-orange/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "claude/swimwear/2:1": {
+          "sha256": "0c484e621a89aeba23c28fd03e863218a57e56382e4d8b03e9df3391601a7421",
+          "media": "claude-orange/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "claude/swimwear/1:2": {
+          "sha256": "dc5705461d0a7d9586abbb09c335dc2bd5a1a4fe987b4d5ef03b9d2312c1777b",
+          "media": "claude-orange/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "dragon/dragon-swimwear/1:1": {
+          "sha256": "2c067e8cc4e3e531d285b062ba6c8d6109f08292b979bac12639d90bc3bbe0b3",
+          "media": "dragon-swim/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "dragon/dragon-swimwear/2:1": {
+          "sha256": "5436e15a80e39d242bc57ce66bcf6a613d28fed32f8216e9ac5b8524238f4c71",
+          "media": "dragon-swim/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "dragon/dragon-swimwear/1:2": {
+          "sha256": "9e003788b61eaf7edab301d1d1798ce44235a4a5455ac09aef43dd068ce041aa",
+          "media": "dragon-swim/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "grok/grok-default/1:1": {
+          "sha256": "7fa35f009fbde567abe19c7950722b9eb8b9226fe4fae3ce41127c2b544ff5c7",
+          "media": "grok-default/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "grok/grok-default/2:1": {
+          "sha256": "b941e1f4531f7afc807cc6852f0a9ab6db208d37cd7f5731c974283d7f95b772",
+          "media": "grok-default/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "grok/grok-default/1:2": {
+          "sha256": "7109b2f0151f69feb824ef4ea0c82f8bfcd7b878764589e4931637d40f7fbc23",
+          "media": "grok-default/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/admiral/1:1": {
+          "sha256": "3517a51ccde3d5e30498a86e0edfbc07fdaca0f901a3b2093f59241d5f40a9c9",
+          "media": "fatfish-admiral/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/admiral/2:1": {
+          "sha256": "e263d2af8b09e9061c81f7ea34fd9506430a3f5d9009c2360cec86d33119f197",
+          "media": "fatfish-admiral/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/admiral/1:2": {
+          "sha256": "9620141e4a07f03e74e6543b10cbd6a76407829f22e407e1af35a934f4269112",
+          "media": "fatfish-admiral/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/zip-swim/1:1": {
+          "sha256": "3a0de0da186537098f36237dcc51322f83d05d071d2f06e2183a5e06610ba954",
+          "media": "fatfish-zip/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/zip-swim/2:1": {
+          "sha256": "a7773d26727d317a011aaeca4672d910c182d3af69e13a2eb9dbe868b6eda52f",
+          "media": "fatfish-zip/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/zip-swim/1:2": {
+          "sha256": "52b69d8d399988889f64948546547489fba58d222441f7f3eb9d88c0188f0499",
+          "media": "fatfish-zip/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/sailor-swim/1:1": {
+          "sha256": "e40d1dcab3d4318237e54b406c774baa0cd9ae59fc242060c0a1033e3ae72dab",
+          "media": "fatfish-sailor/square-bust/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/sailor-swim/2:1": {
+          "sha256": "3b4dd8ea9c4ff30706e064c94f0bb1e3d84fb96fe7132bae0eb7bfe0ca524f03",
+          "media": "fatfish-sailor/wide-head/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        },
+        "fatFish/sailor-swim/1:2": {
+          "sha256": "3c4b7423c2124627aeb75e121c055e8d12c2e20b6e19023f95497cff9c0eaff0",
+          "media": "fatfish-sailor/tall-half/idle.png",
+          "check": "核对画幅、口型和声明的可用动作"
+        }
+      }
+    }
+  }
+}
