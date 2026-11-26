@@ -2,38 +2,95 @@
 <html lang="zh-CN">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>称重食堂 · 小克三姿态</title>
+<meta name="color-scheme" content="dark">
+<title>PoseRelay</title>
 <style>
-  :root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #1d2025; color: #f4f1ed; }
-  main { width: min(calc(100% - 2rem), 600px); margin: 1.5rem auto; }
-  h1 { font-size: 1.35rem; margin: 0 0 .8rem; }
-  canvas { display: block; width: 100%; height: auto; border-radius: .6rem; background: #b8c0d4; }
-  nav, .controls { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin: .7rem 0; }
+  :root { color-scheme: dark; font: 16px/1.45 system-ui, sans-serif; background: #181919; color: #f7efe6; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  main { max-width: 1050px; margin: auto; padding: 1.3rem 1rem 2rem; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  h1 { margin: 0; font-size: 1.28rem; font-weight: 650; }
+  a { color: #ffbb8e; text-underline-offset: .2em; }
+  .links { display: flex; gap: .9rem; font-size: .86rem; }
+  .layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 1.4rem; align-items: start; }
+  .panel { min-width: 0; }
+  canvas { display: block; width: 100%; height: auto; background: #b8c0d4; border-radius: .8rem; }
+  nav, .controls { display: flex; align-items: center; flex-wrap: wrap; gap: .45rem; margin: .65rem 0; }
   button, input, select { font: inherit; }
-  button, select { padding: .35rem .55rem; }
-  input { width: 5rem; }
-  output { display: block; color: #e6c4ae; min-height: 1.5em; margin-top: .5rem; }
+  button, select { min-height: 2.55rem; padding: .35rem .7rem; border-radius: .48rem; border: 1px solid #55514a; background: #262625; color: inherit; }
+  button:not(:disabled), summary { cursor: pointer; }
+  button:disabled, input:disabled, select:disabled { opacity: .55; }
+  button[aria-pressed="true"] { border-color: #e6a779; color: #ffbb8e; }
+  #voice { width: 100%; background: #f4aa78; color: #25170d; border-color: #f4aa78; font-weight: 700; }
+  #cancel[hidden] { display: none; }
+  :focus-visible { outline: 2px solid #ffbb8e; outline-offset: 3px; }
+  #status { display: block; color: #f5be9e; margin: .6rem 0 .2rem; min-height: 1.45em; }
+  p { color: #c5bbb0; margin: .4rem 0 .7rem; }
+  details { border-top: 1px solid #44403a; margin-top: .85rem; padding-top: .65rem; }
+  label { font-size: .9rem; }
+  .timing { width: 5rem; }
+  .files { display: grid; gap: .55rem; }
+  .files label { display: grid; gap: .2rem; }
+  input[type=file] { max-width: 100%; }
+  #record-status { color: #f5be9e; display: block; }
+  @media (max-width: 680px) {
+    main { padding: .7rem .75rem 1.4rem; }
+    header { margin-bottom: .6rem; }
+    .layout { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  }
 </style>
 <main>
-  <h1>小克三姿态</h1>
-  <canvas id="figure" width="512" height="512" aria-label="小克军装动画"></canvas>
-  <output id="status" aria-live="polite">载入中</output>
-  <nav aria-label="姿态">
-    <button data-pose="D" disabled>正面</button>
-    <button data-pose="A" disabled>左看</button>
-    <button data-pose="B" disabled>右看</button>
-    <button id="cancel" disabled>取消转场</button>
-  </nav>
-  <div class="controls">
-    <button id="voice" disabled>试听台词</button>
-    <button id="blink" disabled>眨眼</button>
-    <label>呼吸 <select id="breath" disabled><option value="low">低</option><option value="medium" selected>中</option><option value="high">高</option></select></label>
-    <label>受击 <select id="impact" disabled><option value="low">轻</option><option value="medium">中</option><option value="high">重</option></select></label>
-    <button id="hit" disabled>触发受击</button>
-  </div>
-  <div class="controls">
-    <label>眨眼时长（毫秒） <input id="duration" type="number" min="100" max="700" step="10" value="260" disabled></label>
-    <label>眨眼间隔（毫秒） <input id="interval" type="number" min="500" max="12000" step="100" value="4100" disabled></label>
+  <header>
+    <h1>PoseRelay</h1>
+    <div class="links"><a id="language" href="?lang=en">English</a><a href="https://github.com/li1fang/PoseRelay">GitHub</a></div>
+  </header>
+  <div class="layout">
+    <canvas id="figure" width="512" height="512" aria-label="小克三姿态" aria-describedby="touch-help"></canvas>
+    <div class="panel">
+      <output id="status" aria-live="polite" data-en="Loading">载入中</output>
+      <nav aria-label="姿态">
+        <button data-pose="D" data-en="Front" disabled>正面</button>
+        <button data-pose="A" data-en="Look left" disabled>左看</button>
+        <button data-pose="B" data-en="Look right" disabled>右看</button>
+        <button id="cancel" data-en="Cancel turn" disabled hidden>取消转场</button>
+      </nav>
+      <button id="voice" data-en="Play a line" disabled>试听台词</button>
+      <p id="touch-help" data-en="Tap either side of the chest to try a reaction.">点胸部任意一侧，试试看她的反应。</p>
+      <div class="controls">
+        <button data-hit="right" data-en="Screen left" disabled>画面左侧</button>
+        <button data-hit="left" data-en="Screen right" disabled>画面右侧</button>
+      </div>
+      <details>
+        <summary data-en="Animation controls">动画控制</summary>
+        <div class="controls">
+          <button id="blink" data-en="Blink" disabled>眨眼</button>
+          <label><span data-en="Breathing">呼吸</span> <select id="breath" disabled><option value="auto" data-en="Auto">自动</option><option value="low" data-en="Low">低</option><option value="medium" data-en="Medium">中</option><option value="high" data-en="High">高</option></select></label>
+          <label><span data-en="Impact">受击</span> <select id="impact" disabled><option value="low" data-en="Light">轻</option><option value="medium" data-en="Medium">中</option><option value="high" data-en="Heavy">重</option></select></label>
+          <button id="hit" data-en="Trigger impact" disabled>触发受击</button>
+        </div>
+        <div class="controls">
+          <label><span data-en="Blink duration (ms)">眨眼时长（毫秒）</span> <input class="timing" id="duration" type="number" min="100" max="700" step="10" value="260" disabled></label>
+          <label><span data-en="Blink interval (ms)">眨眼间隔（毫秒）</span> <input class="timing" id="interval" type="number" min="500" max="12000" step="100" value="4100" disabled></label>
+          <button id="blink-auto" data-en="Reset auto blink" disabled>恢复自动眨眼</button>
+        </div>
+      </details>
+      <details>
+        <summary data-en="Record a rehearsal">录制排演</summary>
+        <p data-en="Load three WAV files for front, right and front again. The turn clips play between the lines.">依次选择正面、右看、回正三段 WAV。播放器在台词之间插入转场。</p>
+        <div class="files">
+          <label><span data-en="Opening · front">开场 · 正面</span><input type="file" name="line" accept=".wav,audio/wav" disabled></label>
+          <label><span data-en="Middle · look right">中段 · 右看</span><input type="file" name="line" accept=".wav,audio/wav" disabled></label>
+          <label><span data-en="Closing · front">收尾 · 正面</span><input type="file" name="line" accept=".wav,audio/wav" disabled></label>
+        </div>
+        <div class="controls">
+          <button id="rehearse" data-en="Rehearse" disabled>排演</button>
+          <button id="record" data-en="Record and download" disabled>录制并下载</button>
+          <a id="download" data-en="Download again" hidden>重新下载</a>
+        </div>
+        <output id="record-status" aria-live="polite"></output>
+      </details>
+    </div>
   </div>
 </main>
 <script type="module" src="stage.mjs"></script>

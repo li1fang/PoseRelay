@@ -4,9 +4,11 @@
 
 **Make 2D characters that speak, idle, and change poses.** Real-time layers drive lip sync, blinking, breathing, impact reactions, and fringe motion. Pre-rendered clips handle pose changes, then hand control back to the destination pose. The work of generating those clips happens during production.
 
-![Three reference poses used by the uniformed Claude player. Left to right are A looking left, D facing forward, and B looking right.](docs/media/claude-three-poses.jpg)
+![A silent clip of Claude lifting her belt as she turns back to face the viewer.](docs/media/belt-lift.webp)
 
-Claude is the complete example, with three poses and six directed transitions. [Watch her lift her belt as she turns back to the front](docs/media/belt-lift.webp). The portrait gallery includes four characters, seven looks, and 21 fixed views. Playback and packaging work offline. Manual review makes zero API calls.
+**[Try Claude in your browser](https://li1fang.github.io/PoseRelay/examples/claude/?lang=en).** She idles on her own. Tap either side of the chest to try an impact, play a test line, or change pose. The demo runs without an account or API key.
+
+Claude is the complete example, with three poses and six directed transitions. The portrait gallery includes four characters, seven looks, and 21 fixed views. Playback and packaging work offline. Manual review makes zero API calls.
 
 ## Run the demos in a minute
 
@@ -18,12 +20,14 @@ python -m http.server 8000 --bind 127.0.0.1
 
 | Demo | Try this first |
 | --- | --- |
-| [Claude pose player](http://127.0.0.1:8000/examples/claude/) | Click **右看** (look right), wait for the pose to settle, then click **试听台词** (play a test line). Click **正面** (front) to see her lift her belt as she turns back. All three poses let you adjust breathing, trigger an impact, and set blink duration and interval separately. |
+| [Claude pose player](http://127.0.0.1:8000/examples/claude/?lang=en) | Click **Look right**, wait for the pose to settle, then click **Play a line**. Click **Front** to watch her lift her belt on the way back. Open **Animation controls** for manual settings or **Record a rehearsal** to use your own WAV files. |
 | [Portrait gallery](http://127.0.0.1:8000/examples/portraits/) | Choose a look, switch between `1:1`, `1:2`, and `2:1`, and drag the **口型** (mouth shape) slider. Breathing, impacts, blinks, and hair motion depend on the view. |
 
 ![Actual browser captures of the Claude pose player and the square Grok portrait with the gallery controls.](docs/media/browser-demos.jpg)
 
 ## How pose changes work
+
+![Three reference poses used by the uniformed Claude player. Left to right are A looking left, D facing forward, and B looking right.](docs/media/claude-three-poses.jpg)
 
 ![Start at D facing forward. Each pair of poses has a separate silent clip for each direction, for six clips in all.](docs/media/pose-transitions.png)
 

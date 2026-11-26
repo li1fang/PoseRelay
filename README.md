@@ -8,6 +8,8 @@
 
 小克是完整样例，三种姿态之间共六条转场。[看她抬腰带回到正面](docs/media/belt-lift.webp)。角色库还提供四位角色、七套外观和 21 个固定画面。播放和打包可离线进行，人工看片模式不产生 API 请求。
 
+**[打开网页试玩](https://li1fang.github.io/PoseRelay/examples/claude/)**。小克会自行待机。你可以点一下胸部任意一侧，试听台词，或者让她换个姿态。网页无需登录或填 API 密钥。
+
 ## 一分钟跑起来
 
 需要 Python 3.10+ 和支持 Canvas、Web Audio、H.264 MP4 的现代浏览器。克隆仓库，或解压 [GitHub Releases](https://github.com/li1fang/PoseRelay/releases/latest) 上的 ZIP。从包含本 README 和 `canteen.py` 的目录运行。Windows 上若 Python 命令是 `py`，把示例中的 `python` 换成 `py`。
@@ -18,7 +20,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 | 打开样例 | 第一次可以这样试 |
 | --- | --- |
-| [小克三姿态](http://127.0.0.1:8000/examples/claude/) | 点「右看」，到位后点「试听台词」。点「正面」看她提腰带回正。三个姿态都可以调呼吸、触发受击，并分别设置闭眼时长和眨眼间隔。 |
+| [小克三姿态](http://127.0.0.1:8000/examples/claude/) | 点「右看」，到位后点「试听台词」。点「正面」看她提腰带回正。「动画控制」可手动调参数，「录制排演」可导入本地 WAV。 |
 | [角色样例](http://127.0.0.1:8000/examples/portraits/) | 选外观，切换 `1:1`、`1:2`、`2:1`，拖「口型」滑杆。呼吸、受击、眨眼和发丝按该画面的能力开放。 |
 
 ![实际浏览器截图。左侧是军装小克三姿态播放器，右侧是 Grok 方形胸像与角色样例控件。](docs/media/browser-demos.jpg)

@@ -7,6 +7,20 @@ const page = document.querySelector("#figure");
 const ctx = page.getContext("2d", {willReadFrequently: true});
 const status = document.querySelector("#status");
 const inputs = [...document.querySelectorAll("button, input, select")];
+const lines = [...document.querySelectorAll('input[name="line"]')];
+const recordingStatus = document.querySelector("#record-status");
+const download = document.querySelector("#download");
+const canRecord = typeof page.captureStream === "function" && typeof MediaRecorder === "function";
+const english = new URLSearchParams(location.search).get("lang") === "en";
+const tr = (zh,en) => english ? en : zh;
+if (english) {
+  document.documentElement.lang = "en";
+  for (const element of document.querySelectorAll("[data-en]")) element.textContent = element.dataset.en;
+  document.querySelector("#language").textContent = "简体中文";
+  document.querySelector("#language").href = location.pathname;
+  page.setAttribute("aria-label","Claude in three poses");
+  document.querySelector("nav").setAttribute("aria-label","Poses");
+}
 const manifestURL = new URL("./manifest.json", import.meta.url);
 const clock = performance.now();
 const now = () => Math.floor(performance.now() - clock);
@@ -17,8 +31,13 @@ const curves = {...presets(1), periodMs: 3900, inhaleFraction: .46};
 const soft = new Softbody(instanceId, capabilities, curves);
 const fadeLength = 4/24;
 const images = {}, clips = {}, events = [];
+const breathCycle = ["medium","low","medium","high","low","medium"];
+const blinkVariation = [0,-150,280,-340,390,120];
+const poseLabels = {D:tr("正面","Front"),A:tr("左看","Looking left"),B:tr("右看","Looking right")};
 let pose = "D", motion = null, arrival = 0, spoken = null, eventNumber = 0;
 let durationMs = 260, intervalMs = 4100, nextAuto = 2150, lastBlink = -Infinity;
+let automaticBlink = true, blinkNumber = 0, automaticBreath = true, lastBreathSlot = -1;
+let idleOrigin = 0, impactReady = 0, taking = false;
 let voiceBuffers = null, audioContext = null, activeControls = null;
 
 async function bytes(root, file, wanted) {
@@ -85,9 +104,10 @@ async function loadVideo(clip) {
 
 function log(phase, extra={}) {
   events.push({phase,pose,atMs:now(),...extra});
-  status.value = {idle:"姿态 "+pose,transition:"转场 "+extra.from+" → "+extra.to,
-                  speak:"姿态 "+pose+" · 说话",cancel:"已回到姿态 "+pose,
-                  failure:"转场失败，已回到 "+pose}[phase];
+  const name = poseLabels[pose];
+  status.value = {idle:name,transition:tr("正在转场","Turning"),
+                  speak:name+tr(" · 说话中"," · Speaking"),cancel:name,
+                  failure:tr("转场失败，已回到","Could not turn. Returned to ")+name}[phase];
 }
 
 function mouthAt() {
@@ -97,10 +117,15 @@ function mouthAt() {
   return Math.max(0,Math.min(1,(rms-.012)/.13));
 }
 
+function blinkSpacing() {
+  if (!automaticBlink) return intervalMs;
+  return (spoken?.analyser ? 4700 : 2850) + blinkVariation[blinkNumber++ % blinkVariation.length];
+}
+
 function blinkAt(t) {
   if (t >= nextAuto) {
     lastBlink = t;
-    nextAuto = t + intervalMs;
+    nextAuto = t + blinkSpacing();
   }
   const elapsed = t - lastBlink;
   return elapsed >= 0 && elapsed < durationMs ? elapsed/durationMs : null;
@@ -123,6 +148,11 @@ function paintPose(target, name, controls) {
 function update() {
   if (!motion) {
     const t = now();
+    const slot = Math.floor((t-idleOrigin)/curves.periodMs);
+    if (automaticBreath && slot !== lastBreathSlot) {
+      softEvent("softbody.breath",breathCycle[slot%breathCycle.length]);
+      lastBreathSlot = slot;
+    }
     const ramp = Math.min(1, (t-arrival)/370);
     const current = soft.tick(t);
     const body = {left:ramp*current.left, right:ramp*current.right};
@@ -134,8 +164,14 @@ function update() {
 
 function refresh() {
   for (const input of inputs) {
-    input.disabled = input.id === "cancel" ? !motion : Boolean(motion || spoken);
+    input.disabled = input.id === "cancel" ? !motion || taking : Boolean(motion || spoken || taking);
   }
+  const missing = lines.some(input => input.files.length === 0);
+  document.querySelector("#rehearse").disabled ||= missing;
+  document.querySelector("#record").disabled ||= missing || !canRecord;
+  document.querySelector("#cancel").hidden = !motion || taking;
+  for (const button of document.querySelectorAll("[data-pose]"))
+    button.setAttribute("aria-pressed",String(button.dataset.pose === pose));
 }
 
 function softEvent(type, intensity, side) {
@@ -150,21 +186,30 @@ function tuneBlink(update) {
   if (!Number.isSafeInteger(speed) || !Number.isSafeInteger(interval) ||
       speed<100 || speed>700 || interval<500 || interval>12000) throw new RangeError("Blink timing is out of range");
   durationMs = speed;
-  if (interval !== intervalMs) nextAuto = now() + interval;
+  if (update.intervalMs !== undefined) {
+    automaticBlink = false;
+    nextAuto = now() + interval;
+  }
   intervalMs = interval;
   return {durationMs,intervalMs};
 }
 
-async function initAudio() {
+async function readyAudio() {
   audioContext ??= new AudioContext();
   await audioContext.resume();
-  voiceBuffers ??= Promise.all(Object.values(manifest.voices).map(async ({file,sha256}) =>
-    audioContext.decodeAudioData(await bytes(manifestURL,file,sha256))));
-  await voiceBuffers;
   return audioContext;
 }
 
-async function say(index=0) {
+async function initAudio() {
+  const audio = await readyAudio();
+  voiceBuffers ??= Promise.all(Object.values(manifest.voices).map(async ({file,sha256}) =>
+    audio.decodeAudioData(await bytes(manifestURL,file,sha256))));
+  try { await voiceBuffers; }
+  catch (error) { voiceBuffers = null; throw error; }
+  return audio;
+}
+
+async function playSpeech(load, line) {
   if (motion) {
     if (await motion.done !== "complete") return "cancelled";
   }
@@ -173,8 +218,8 @@ async function say(index=0) {
   spoken = job;
   refresh();
   try {
-    const audio = await initAudio();
-    const buffer = (await voiceBuffers)[index];
+    const audio = await readyAudio();
+    const buffer = await load(audio);
     if (!buffer) throw new RangeError("Unknown voice line");
     const source = audio.createBufferSource();
     const analyser = audio.createAnalyser();
@@ -184,7 +229,8 @@ async function say(index=0) {
     analyser.connect(audio.destination);
     if (window.canteen.captureAudio) analyser.connect(window.canteen.captureAudio);
     Object.assign(job,{analyser,samples:new Float32Array(analyser.fftSize)});
-    log("speak",{line:index});
+    if (automaticBlink) nextAuto = Math.max(nextAuto,now()+blinkSpacing());
+    log("speak",{line});
     const ended = new Promise(resolve => source.addEventListener("ended",resolve,{once:true}));
     source.start();
     await ended;
@@ -193,9 +239,22 @@ async function say(index=0) {
     return "complete";
   } finally {
     spoken = null;
+    if (automaticBlink) nextAuto = Math.min(nextAuto,now()+blinkSpacing());
     log("idle");
     refresh();
   }
+}
+
+function say(index=0) {
+  return playSpeech(async () => {
+    await initAudio();
+    return (await voiceBuffers)[index];
+  },index);
+}
+
+function sayAudio(data) {
+  return playSpeech(async audio => audio.decodeAudioData(
+    data instanceof Blob ? await data.arrayBuffer() : data.slice(0)),"external");
 }
 
 function renderClip(job, mediaTime) {
@@ -268,12 +327,118 @@ function travel(to) {
   return job.done;
 }
 
+function touchImpact(side) {
+  if (motion || taking || now() < impactReady) return;
+  const roll = Math.random();
+  const intensity = roll < .65 ? "low" : roll < .9 ? "medium" : "high";
+  const result = softEvent("softbody.impact",intensity,side);
+  if (result.status === "accepted") {
+    impactReady = now() + 650;
+    events.push({phase:"impact",pose,atMs:now(),intensity,side});
+  }
+}
+
+function touchFigure(event) {
+  const rect = page.getBoundingClientRect();
+  const view = manifest.poses[pose].softbody;
+  const x = (event.clientX-rect.left)*view.size[0]/rect.width;
+  const y = (event.clientY-rect.top)*view.size[1]/rect.height;
+  for (const [side,[left,top,right,bottom]] of Object.entries(view.windows)) {
+    if (left <= x && x < right && top <= y && y < bottom) {
+      touchImpact(side);
+      return;
+    }
+  }
+}
+
+function captureTake(audio) {
+  const source = page.captureStream(30);
+  const mix = audio.createMediaStreamDestination();
+  const recording = new MediaStream([...source.getVideoTracks(),...mix.stream.getAudioTracks()]);
+  try {
+    const recorder = new MediaRecorder(recording);
+    const parts = [];
+    recorder.addEventListener("dataavailable", event => { if (event.data.size) parts.push(event.data); });
+    const stopped = new Promise((resolve,reject) => {
+      recorder.addEventListener("error",event => reject(event.error),{once:true});
+      recorder.addEventListener("stop",() => resolve(new Blob(parts,{type:recorder.mimeType})),{once:true});
+    });
+    void stopped.catch(() => {});
+    recorder.start();
+    window.canteen.captureAudio = mix;
+    return async () => {
+      delete window.canteen.captureAudio;
+      try {
+        if (recorder.state !== "inactive") recorder.stop();
+        return await stopped;
+      } finally {
+        for (const track of recording.getTracks()) track.stop();
+      }
+    };
+  } catch (error) {
+    for (const track of recording.getTracks()) track.stop();
+    throw error;
+  }
+}
+
+async function take(record) {
+  if (taking || spoken || motion || lines.some(input => !input.files.length)) return;
+  taking = true;
+  refresh();
+  recordingStatus.value = tr("正在读取本地音频","Reading local audio");
+  let stopRecording;
+  try {
+    const audio = await readyAudio();
+    const buffers = await Promise.all(lines.map(async input =>
+      audio.decodeAudioData(await input.files[0].arrayBuffer())));
+    if (pose !== "D" && await travel("D") !== "complete") throw new Error("Could not reset the opening pose");
+    idleOrigin = now();
+    lastBreathSlot = -1;
+    if (automaticBlink) {
+      lastBlink = -Infinity;
+      nextAuto = idleOrigin+800;
+      blinkNumber = 0;
+    }
+    if (record) stopRecording = captureTake(audio);
+    recordingStatus.value = record ? tr("正在录制","Recording") : tr("正在排演","Rehearsing");
+    await new Promise(resolve => setTimeout(resolve,1800));
+    for (const [index,destination] of ["D","B","D"].entries()) {
+      if (pose !== destination && await travel(destination) !== "complete") throw new Error("A turn clip could not play");
+      if (await playSpeech(() => buffers[index],`local-${index+1}`) !== "complete") throw new Error("A line could not play");
+    }
+    if (record) {
+      const blob = await stopRecording();
+      stopRecording = null;
+      if (!blob.size) throw new Error("The recording is empty");
+      if (download.hasAttribute("href")) URL.revokeObjectURL(download.href);
+      download.href = URL.createObjectURL(blob);
+      download.download = `poserelay-${english ? "en" : "zh"}.${blob.type.includes("mp4") ? "mp4" : "webm"}`;
+      download.hidden = false;
+      download.click();
+    }
+    recordingStatus.value = record ? tr("录制完成","Recording ready") : tr("排演结束","Rehearsal complete");
+  } catch (error) {
+    recordingStatus.value = tr("未完成。请检查 WAV 文件并重试。","Could not finish. Check the WAV files and try again.");
+    console.error(error);
+  } finally {
+    if (stopRecording) await stopRecording().catch(() => {});
+    taking = false;
+    refresh();
+  }
+}
+
 const manifestResponse = await fetch(manifestURL);
 if (!manifestResponse.ok) throw new Error("Portrait manifest missing");
 const manifest = await manifestResponse.json();
 try {
+  images.D = await loadPose("D",manifest.poses.D);
+  idleOrigin = arrival = now();
+  nextAuto = idleOrigin+1250;
+  log("idle");
+  update();
   await Promise.all([
-    ...Object.entries(manifest.poses).map(async ([name,view]) => { images[name] = await loadPose(name,view); }),
+    ...Object.entries(manifest.poses).filter(([name]) => name !== "D")
+      .map(async ([name,view]) => { images[name] = await loadPose(name,view); }),
     ...Object.entries(manifest.clips).map(async ([name,clip]) => {
       if (!manifest.poses[clip.from] || !manifest.poses[clip.to] ||
           clip.endpoints[0] !== manifest.poses[clip.from].baseSha256 ||
@@ -282,11 +447,21 @@ try {
       catch { clips[name] = {...clip,disabled:true}; }
     }),
   ]);
-  const blinkOnce = () => { lastBlink = now(); nextAuto = lastBlink+intervalMs; };
+  const blinkOnce = () => { lastBlink = now(); nextAuto = lastBlink+blinkSpacing(); };
   const hit = (intensity,side="both") => softEvent("softbody.impact",intensity,side);
-  const breath = intensity => softEvent("softbody.breath",intensity);
+  const breath = intensity => {
+    if (intensity === "auto") {
+      automaticBreath = true;
+      idleOrigin = now();
+      lastBreathSlot = -1;
+      return;
+    }
+    const receipt = softEvent("softbody.breath",intensity);
+    if (receipt.status === "accepted") automaticBreath = false;
+    return receipt;
+  };
   window.canteen = {
-    travel,say,blinkOnce,tuneBlink,hit,breath,initAudio,time:now,
+    travel,say,sayAudio,blinkOnce,tuneBlink,hit,breath,initAudio,time:now,
     cancel: () => motion?.cancel(),
     snapshot: () => ({...activeControls,breathPhase:activeControls?.phase,
                        pose,phase:motion?"transition":spoken?"speak":"idle"}),
@@ -300,17 +475,29 @@ try {
   for (const button of document.querySelectorAll("[data-pose]"))
     button.addEventListener("click",() => travel(button.dataset.pose));
   document.querySelector("#cancel").onclick = window.canteen.cancel;
-  document.querySelector("#voice").onclick = () => say(0);
+  document.querySelector("#voice").onclick = () => say(0).catch(error => {
+    status.value = tr("无法播放台词","Could not play the line");
+    console.error(error);
+  });
   document.querySelector("#blink").onclick = blinkOnce;
   document.querySelector("#breath").onchange = event => breath(event.target.value);
   document.querySelector("#hit").onclick = () => hit(document.querySelector("#impact").value);
   document.querySelector("#duration").onchange = event => tuneBlink({durationMs:Number(event.target.value)});
   document.querySelector("#interval").onchange = event => tuneBlink({intervalMs:Number(event.target.value)});
-  arrival = now();
-  log("idle");
+  document.querySelector("#blink-auto").onclick = () => {
+    automaticBlink = true;
+    nextAuto = now()+blinkSpacing();
+  };
+  page.addEventListener("click",touchFigure);
+  for (const button of document.querySelectorAll("[data-hit]"))
+    button.addEventListener("click",() => touchImpact(button.dataset.hit));
+  for (const input of lines) input.addEventListener("change",refresh);
+  document.querySelector("#rehearse").onclick = () => take(false);
+  document.querySelector("#record").onclick = () => take(true);
+  if (!canRecord) recordingStatus.value = tr("此浏览器可排演。下载录制请用支持 Canvas 录屏的浏览器。",
+    "Rehearsal is available. Use a browser with canvas recording support to download a take.");
   refresh();
-  update();
 } catch (error) {
-  status.value = "载入失败";
+  status.value = tr("载入失败","Could not load the demo");
   console.error(error);
 }

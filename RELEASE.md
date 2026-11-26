@@ -1,4 +1,12 @@
-# PoseRelay v0.1.0
+# PoseRelay 发布说明 · Release notes
+
+## v0.1.1
+
+小克打开即进入正面自动待机。呼吸在三档间过渡，待机和说话使用不同的眨眼节奏，点击胸部或按对应的左右按钮即可触发单侧受击。中英文试玩页带有一条内置试听音频，也可用三段本地 WAV 排演与录制。
+
+Claude starts in an animated idle pose with automatic breathing and speech-aware blinking. Click either side of the chest or use the corresponding button to try a one-sided impact. The bilingual demo includes a test line and can rehearse or record a three-pose sequence with local WAV files.
+
+## v0.1.0
 
 ## 简体中文
 
