@@ -1,0 +1,390 @@
+{
+  "clips": {
+    "A/D": {
+      "endpoints": [
+        "e8277fa4c78c177704022833b6a10eb7f5b03877b0bf38f09fd6e6f3358fa764",
+        "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e"
+      ],
+      "file": "./assets/layers/a-to-d.mp4",
+      "fps": 48,
+      "rate": 1,
+      "sha256": "2c24ab7a83e6373a06a323385461ad767fffee6ff409c2fa3cd07f3b050ac802",
+      "source": "A",
+      "to": "D"
+    },
+    "B/D": {
+      "endpoints": [
+        "ea8db1b26a5d31b358922fc540de20d684aebcad54dddf4351c33f0fff193603",
+        "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e"
+      ],
+      "file": "./assets/layers/b-to-d.mp4",
+      "fps": 48,
+      "rate": 1,
+      "sha256": "6c85002f8fde6b843ed3dc4b8f7c9448f13b3f41fce8718f1e371f78dbbc5706",
+      "source": "B",
+      "to": "D"
+    },
+    "D/A": {
+      "endpoints": [
+        "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e",
+        "e8277fa4c78c177704022833b6a10eb7f5b03877b0bf38f09fd6e6f3358fa764"
+      ],
+      "file": "./assets/layers/d-to-a.mp4",
+      "fps": 48,
+      "rate": 2,
+      "sha256": "79a15f2fbca0dcb7c7428d23a056596d138acedb7dec9c97a1f06c462a7ac70f",
+      "source": "D",
+      "to": "A"
+    },
+    "D/B": {
+      "endpoints": [
+        "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e",
+        "ea8db1b26a5d31b358922fc540de20d684aebcad54dddf4351c33f0fff193603"
+      ],
+      "file": "./assets/layers/d-to-b.mp4",
+      "fps": 48,
+      "rate": 1,
+      "sha256": "7d51e9122d23d2cbe39b52515f3c4a9aae4aa608a2af1accd94319b1383e0f0c",
+      "source": "D",
+      "to": "B"
+    }
+  },
+  "engine": "./engine/",
+  "initialPose": "D",
+  "pendingRoutes": 0,
+  "poses": {
+    "A": {
+      "base": "./assets/poses/e8277fa4c78c177704022833b6a10eb7f5b03877b0bf38f09fd6e6f3358fa764.png",
+      "baseSha256": "e8277fa4c78c177704022833b6a10eb7f5b03877b0bf38f09fd6e6f3358fa764",
+      "breath": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "eyes": {
+        "file": "./assets/layers/A/eyes.png",
+        "frames": 10,
+        "rect": [
+          520,
+          204,
+          165,
+          60
+        ],
+        "sha256": "1690a75fe9dbf0f0fc6bb2f03c0d9d729fbc08c49025510fe1574b7a18331a07"
+      },
+      "fringe": {
+        "changedPixels": [
+          3484,
+          3444,
+          3410,
+          3347,
+          3295,
+          3239,
+          3166,
+          3059,
+          2930,
+          2700,
+          2200,
+          0,
+          2342,
+          2781,
+          2987,
+          3095,
+          3170,
+          3224,
+          3259,
+          3289,
+          3333,
+          3352,
+          3370
+        ],
+        "file": "./assets/layers/A/fringe.png",
+        "frames": 23,
+        "idleIndex": 11,
+        "rect": [
+          542,
+          147,
+          90,
+          111
+        ],
+        "sha256": "2389cde53f795790f59757ffd2f74363d05597db826c41a4af3cc62a4d9e6730"
+      },
+      "group": "军装三姿态",
+      "impact": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "mouth": {
+        "file": "./assets/layers/A/mouth.png",
+        "frames": 5,
+        "rect": [
+          593,
+          293,
+          53,
+          31
+        ],
+        "sha256": "6d11f47515a2b27cc9ac41d12a007c7ac038af6ad2c656f81e5424487e7e4560"
+      },
+      "softbody": {
+        "assetPath": "./assets/layers/A/",
+        "baseline": "base.png",
+        "baselineSha256": "e8277fa4c78c177704022833b6a10eb7f5b03877b0bf38f09fd6e6f3358fa764",
+        "checksums": {
+          "left.f32": "fcaed80c4ee6b8ca8fea95072a89558c9af4508a9dd9a93f95536f4caaad57f6",
+          "right.f32": "dddfce8d65966ce52d5e8945a9693f1910edf11c95bf48794209a9362443dbf6"
+        },
+        "files": {
+          "left": "left.f32",
+          "right": "right.f32"
+        },
+        "shadeWeight": 0,
+        "size": [
+          1248,
+          1248
+        ],
+        "windows": {
+          "left": [
+            646,
+            483,
+            778,
+            717
+          ],
+          "right": [
+            532,
+            488,
+            639,
+            715
+          ]
+        }
+      },
+      "title": "左看"
+    },
+    "B": {
+      "base": "./assets/poses/ea8db1b26a5d31b358922fc540de20d684aebcad54dddf4351c33f0fff193603.png",
+      "baseSha256": "ea8db1b26a5d31b358922fc540de20d684aebcad54dddf4351c33f0fff193603",
+      "breath": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "eyes": {
+        "file": "./assets/layers/B/eyes.png",
+        "frames": 10,
+        "rect": [
+          611,
+          200,
+          153,
+          65
+        ],
+        "sha256": "c7ae733d3c580966ef8233bc8940ea8032c131aa175d92d3233c1534889b9acb"
+      },
+      "fringe": {
+        "changedPixels": [
+          2347,
+          2319,
+          2292,
+          2261,
+          2239,
+          2196,
+          2152,
+          2087,
+          1992,
+          1862,
+          1540,
+          0,
+          1468,
+          1839,
+          2000,
+          2093,
+          2172,
+          2232,
+          2291,
+          2327,
+          2368,
+          2397,
+          2426
+        ],
+        "file": "./assets/layers/B/fringe.png",
+        "frames": 23,
+        "idleIndex": 11,
+        "rect": [
+          618,
+          147,
+          98,
+          97
+        ],
+        "sha256": "e2171220f41bbca6c7e37d4f4d7f5e9d9c03e10f1ba5d495dda081761065b88b"
+      },
+      "group": "军装三姿态",
+      "impact": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "mouth": {
+        "file": "./assets/layers/B/mouth.png",
+        "frames": 5,
+        "rect": [
+          688,
+          289,
+          40,
+          33
+        ],
+        "sha256": "5d53da63aecf76f39b06af0464dc824a0bbb41057cdf2661ca884e9acde77d98"
+      },
+      "softbody": {
+        "assetPath": "./assets/layers/B/",
+        "baseline": "base.png",
+        "baselineSha256": "ea8db1b26a5d31b358922fc540de20d684aebcad54dddf4351c33f0fff193603",
+        "checksums": {
+          "left.f32": "11bd6ac00d52003302e5c8bcab8d98e56d1f2b8923bdecf0dacd80b50c97b850",
+          "right.f32": "e0ed9ff68d5dd7df95e37db494e59677ab31806f477f4b9f3922237feb0895d9"
+        },
+        "files": {
+          "left": "left.f32",
+          "right": "right.f32"
+        },
+        "shadeWeight": 0,
+        "size": [
+          1248,
+          1248
+        ],
+        "windows": {
+          "left": [
+            646,
+            486,
+            778,
+            715
+          ],
+          "right": [
+            532,
+            488,
+            639,
+            710
+          ]
+        }
+      },
+      "title": "右看"
+    },
+    "D": {
+      "base": "./assets/poses/cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e.png",
+      "baseSha256": "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e",
+      "breath": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "eyes": {
+        "file": "./assets/layers/D/eyes.png",
+        "frames": 10,
+        "rect": [
+          500,
+          280,
+          218,
+          60
+        ],
+        "sha256": "40da59123a85f36530d21154c30bff0544d619218856cfb3c53faa5cedb89440"
+      },
+      "fringe": {
+        "changedPixels": [
+          4436,
+          4398,
+          4352,
+          4298,
+          4246,
+          4180,
+          4096,
+          3982,
+          3789,
+          3511,
+          2892,
+          0,
+          2862,
+          3504,
+          3783,
+          3971,
+          4075,
+          4168,
+          4231,
+          4291,
+          4328,
+          4361,
+          4394
+        ],
+        "file": "./assets/layers/D/fringe.png",
+        "frames": 23,
+        "idleIndex": 11,
+        "rect": [
+          543,
+          194,
+          107,
+          130
+        ],
+        "sha256": "77ca3bf060c5747313fc05c6a5701de07ea1b2149756fc61d64eb161d23689b8"
+      },
+      "group": "军装三姿态",
+      "impact": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "mouth": {
+        "file": "./assets/layers/D/mouth.png",
+        "frames": 5,
+        "rect": [
+          587,
+          374,
+          61,
+          37
+        ],
+        "sha256": "bf6c7000d79b026f611a300bf50c03aececbd56c19f67d4e91b918d20eaa75d7"
+      },
+      "softbody": {
+        "assetPath": "./assets/layers/D/",
+        "baseline": "base.png",
+        "baselineSha256": "cdc80b7404faef0094ec2bb05f21dc1cf81a012f1025f8c40d8099a94f99d94e",
+        "checksums": {
+          "left.f32": "cd16bac22cecc82e2ae146b0ce3e9abc028e8e59fc0dc1baef957711a064cc39",
+          "right.f32": "90bbba61269235efcf9936a8e2bb6e98627f08010319f05557b7d16756c95372"
+        },
+        "files": {
+          "left": "left.f32",
+          "right": "right.f32"
+        },
+        "shadeWeight": 0,
+        "size": [
+          1248,
+          1248
+        ],
+        "windows": {
+          "left": [
+            639,
+            612,
+            793,
+            917
+          ],
+          "right": [
+            461,
+            607,
+            617,
+            919
+          ]
+        }
+      },
+      "title": "正面"
+    }
+  },
+  "title": "小克 · 军装",
+  "tracks": {},
+  "voices": [
+    {
+      "file": "./assets/layers/short.wav",
+      "sha256": "3f9af8672da7ea18de698172cd464760cf45e0c0d642836bc5fb5693a8fb7cc4"
+    },
+    {
+      "file": "./assets/layers/long.wav",
+      "sha256": "445cd8905df6363abcf58d4985612ef9ed9cf61903ca9d81e2986b32ce75d7bd"
+    }
+  ]
+}

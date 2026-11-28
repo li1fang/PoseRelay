@@ -1,5 +1,17 @@
 # PoseRelay 发布说明 · Release notes
 
+## v0.2.0-preview.1
+
+[中文试玩](https://li1fang.github.io/PoseRelay/preview-v2/) · [Try in English](https://li1fang.github.io/PoseRelay/preview-v2/en.html) · [离线下载 / Offline ZIPs](https://github.com/li1fang/PoseRelay/releases/tag/v0.2.0-preview.1)
+
+**龙宝头像 / Dragon portrait**　播放台词时点左看。去程 2×，台词原速。等台词结束再点正面，回程 1×。 Play the sample line, then choose Look left. The turn runs at 2× and the voice stays at normal speed. After speech ends, choose Front for the 1× return.
+
+**小克军装 / Claude uniform**　右看再回正面，以成片 1× 播放提腰带 C 版。抓住到松手约 2.50 秒。到位后可试听台词。 Choose Look right, then Front. The approved belt-lift plays at 1× and keeps about 2.50 seconds from grip to release. Play a sample line once she is facing front.
+
+网页打开即可试玩。离线包需要 Python 3。Windows 解压后双击 Start-Windows.cmd，macOS/Linux 运行 python3 start.py。每套包内都可切换语言。 The browser demos start without setup. To play offline, unzip either package, then run Start-Windows.cmd on Windows or python3 start.py on macOS or Linux. Switch languages at the top of either player.
+
+这次预览发布已定稿的可播放样例。生成工作台继续开发。 This preview ships the approved playable examples. The generation workbench is still in development.
+
 ## v0.1.1
 
 小克打开即进入正面自动待机。呼吸在三档间过渡，待机和说话使用不同的眨眼节奏，点击胸部或按对应的左右按钮即可触发单侧受击。中英文试玩页带有一条内置试听音频，也可用三段本地 WAV 排演与录制。

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-standalone>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PoseRelay · Character player</title>
+<link rel="stylesheet" href="./style.css">
+<header><a class="brand" href="./">PoseRelay</a><a href="./" lang="zh-CN">简体中文</a></header>
+<main class="project-player">
+  <section aria-labelledby="player-title">
+    <h1 id="player-title">Character player</h1>
+    <div class="player-workspace">
+      <canvas id="figure" width="512" height="512" aria-label="Character preview"></canvas>
+      <div class="player-controls">
+        <output id="status" aria-live="polite">Loading character</output>
+        <p id="pending"></p>
+        <nav id="poses" aria-label="Choose a pose"></nav>
+        <div class="actions">
+          <button id="voice" class="primary" disabled>Play sample line</button>
+          <button id="cancel" disabled>Cancel turn</button>
+          <button id="blink" disabled>Blink</button>
+        </div>
+        <p id="speech-hint" class="hint"></p>
+        <div class="actions">
+          <label>Breathing <select id="breath" disabled><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+          <label>Impact <select id="impact" disabled><option value="low">Light</option><option value="medium">Medium</option><option value="high">Heavy</option></select></label>
+          <label>Side <select id="impact-side" disabled><option value="both">Both</option><option value="left">Character left</option><option value="right">Character right</option></select></label>
+          <button id="hit" disabled>Trigger impact</button>
+        </div>
+        <details>
+          <summary>Blink settings</summary>
+          <div class="fields">
+            <label>Duration (ms)<input id="duration" type="number" min="100" max="700" step="10" value="260" disabled></label>
+            <label>Interval (ms)<input id="interval" type="number" min="500" max="12000" step="100" value="4100" disabled></label>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="./sha256.js"></script>
+<script src="./lan-digest.js"></script>
+<script type="module" src="./project-stage.mjs"></script>
+</html>

@@ -1,0 +1,3447 @@
+{
+  "clips": {
+    "head-A/head-D": {
+      "endpoints": [
+        "61f7f087c2268aa73c6fee9dc3e58eea7ae63abe159bd2a38cc63740a4fbf2c8",
+        "3571e9464e1444192c4a8927c004340c678ecac3fc53c468c3a4c7c0b31e7589"
+      ],
+      "file": "./assets/clips/AD.mp4",
+      "fps": 24,
+      "rate": 1,
+      "sha256": "7706100e50899fc6502f7a7ce6fdde6a40ae91e641c8ca3eec31dce7fbeb1424",
+      "source": "head-A",
+      "to": "head-D"
+    },
+    "head-B/head-D": {
+      "endpoints": [
+        "7aaadba61bda6939802205132ee1c4b47c4e1d41a4a6b7adf9b45466922ebf0e",
+        "3571e9464e1444192c4a8927c004340c678ecac3fc53c468c3a4c7c0b31e7589"
+      ],
+      "file": "./assets/clips/BD.mp4",
+      "fps": 24,
+      "rate": 1,
+      "sha256": "f694627fc0ff0d8e861a2ad02b39feecb91211f9552f4f371f62a5355e4049e5",
+      "source": "head-B",
+      "to": "head-D"
+    },
+    "head-D/head-A": {
+      "endpoints": [
+        "3571e9464e1444192c4a8927c004340c678ecac3fc53c468c3a4c7c0b31e7589",
+        "61f7f087c2268aa73c6fee9dc3e58eea7ae63abe159bd2a38cc63740a4fbf2c8"
+      ],
+      "file": "./assets/clips/DA.mp4",
+      "fps": 24,
+      "rate": 2,
+      "sha256": "3cc7c6fe5955c3b383a1d957adac6073dc47837109d7c4c179972c7ba080e35b",
+      "source": "head-D",
+      "to": "head-A"
+    },
+    "head-D/head-B": {
+      "endpoints": [
+        "3571e9464e1444192c4a8927c004340c678ecac3fc53c468c3a4c7c0b31e7589",
+        "7aaadba61bda6939802205132ee1c4b47c4e1d41a4a6b7adf9b45466922ebf0e"
+      ],
+      "file": "./assets/clips/DB.mp4",
+      "fps": 24,
+      "rate": 1,
+      "sha256": "700e674ac7d2e9f15a7e9ddcabfd10d13803b06a1e9e1ab2652bd05bf21cb1a1",
+      "source": "head-D",
+      "to": "head-B"
+    }
+  },
+  "engine": "./engine/",
+  "initialPose": "head-D",
+  "pendingRoutes": 0,
+  "poses": {
+    "head-A": {
+      "base": "./assets/poses/61f7f087c2268aa73c6fee9dc3e58eea7ae63abe159bd2a38cc63740a4fbf2c8.png",
+      "baseSha256": "61f7f087c2268aa73c6fee9dc3e58eea7ae63abe159bd2a38cc63740a4fbf2c8",
+      "breath": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "eyes": {
+        "file": "./assets/layers/A/eyes.png",
+        "frames": 10,
+        "rect": [
+          79,
+          177,
+          90,
+          26
+        ],
+        "sha256": "e09afc0cc72f9d59f0f8f4e7ac6a33b5c5ced4fde6de20b5cbc703fda65b78cd"
+      },
+      "fringe": {
+        "changedPixels": [
+          3755,
+          3738,
+          3712,
+          3665,
+          3629,
+          3570,
+          3500,
+          3387,
+          3244,
+          3005,
+          2560,
+          0,
+          2567,
+          3004,
+          3238,
+          3382,
+          3481,
+          3564,
+          3624,
+          3667,
+          3706,
+          3737,
+          3771
+        ],
+        "file": "./assets/layers/A/fringe.png",
+        "frames": 23,
+        "idleIndex": 11,
+        "rect": [
+          85,
+          81,
+          63,
+          129
+        ],
+        "sha256": "01ab965e3f12316bc15e5fa465e38a193be40de359f2e44f10824bc01859b906"
+      },
+      "group": "头像",
+      "impact": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "mouth": {
+        "file": "./assets/layers/A/mouth.png",
+        "frames": 5,
+        "rect": [
+          98,
+          216,
+          33,
+          28
+        ],
+        "sha256": "976caabe67575dcb08c7a179906913291bb2a9cebe0152f1cf4e5843d9f23bef"
+      },
+      "title": "左看"
+    },
+    "head-B": {
+      "base": "./assets/poses/7aaadba61bda6939802205132ee1c4b47c4e1d41a4a6b7adf9b45466922ebf0e.png",
+      "baseSha256": "7aaadba61bda6939802205132ee1c4b47c4e1d41a4a6b7adf9b45466922ebf0e",
+      "breath": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "eyes": {
+        "file": "./assets/layers/B/eyes.png",
+        "frames": 10,
+        "rect": [
+          137,
+          174,
+          93,
+          29
+        ],
+        "sha256": "895dd4c041b6ccf696af2625a79b3355bd34df2714c1b2b23f83ca6d47d68274"
+      },
+      "fringe": {
+        "changedPixels": [
+          4341,
+          4312,
+          4266,
+          4241,
+          4197,
+          4135,
+          4053,
+          3954,
+          3813,
+          3555,
+          2977,
+          0,
+          2996,
+          3556,
+          3831,
+          3974,
+          4074,
+          4158,
+          4213,
+          4248,
+          4290,
+          4331,
+          4368
+        ],
+        "file": "./assets/layers/B/fringe.png",
+        "frames": 23,
+        "idleIndex": 11,
+        "rect": [
+          155,
+          78,
+          75,
+          130
+        ],
+        "sha256": "14916bf169abb9bf518e01025169e75df90f99577dba76967a3641ffd79937ca"
+      },
+      "group": "头像",
+      "impact": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "mouth": {
+        "file": "./assets/layers/B/mouth.png",
+        "frames": 5,
+        "rect": [
+          187,
+          214,
+          35,
+          30
+        ],
+        "sha256": "718eb016d72abf8056906b373f32eabeaf3b16fa23744bd5c345b4709376a305"
+      },
+      "title": "右看"
+    },
+    "head-D": {
+      "base": "./assets/poses/3571e9464e1444192c4a8927c004340c678ecac3fc53c468c3a4c7c0b31e7589.png",
+      "baseSha256": "3571e9464e1444192c4a8927c004340c678ecac3fc53c468c3a4c7c0b31e7589",
+      "breath": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "eyes": {
+        "file": "./assets/layers/D/eyes.png",
+        "frames": 10,
+        "rect": [
+          99,
+          178,
+          115,
+          31
+        ],
+        "sha256": "91a676119cad54da2c1f3bd52452d60dbd97a80ccfb28e24c557d081e3cb988b"
+      },
+      "fringe": {
+        "baseSourceSha256": "10196d6bde8e524e7f05418c92f7a286c1f842ab29bcb37a418b6a46b10b4c96",
+        "changedPixels": [
+          3022,
+          3001,
+          2955,
+          2928,
+          2879,
+          2829,
+          2773,
+          2673,
+          2550,
+          2359,
+          1947,
+          0,
+          1956,
+          2367,
+          2568,
+          2694,
+          2799,
+          2857,
+          2896,
+          2946,
+          2983,
+          3028,
+          3060
+        ],
+        "file": "./assets/layers/D/fringe.png",
+        "frames": 23,
+        "idleIndex": 11,
+        "rect": [
+          123,
+          87,
+          60,
+          125
+        ],
+        "sha256": "f9de108a464f157ebe66e3a61e54ea88cc09d117bc6791c3ef47b1a9b6e3d68f"
+      },
+      "group": "头像",
+      "impact": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "mouth": {
+        "file": "./assets/layers/D/mouth.png",
+        "frames": 5,
+        "rect": [
+          140,
+          214,
+          38,
+          33
+        ],
+        "sha256": "7d57a72d4970d569b0c363fc5f23ba9ed68f50f2e08a8341a17fc0bc1cabc2e8"
+      },
+      "title": "正面"
+    }
+  },
+  "title": "龙宝 · 头像",
+  "tracks": {
+    "head-D/head-A": {
+      "cols": 16,
+      "fps": 24,
+      "image": "./assets/layers/mouth-DA.png",
+      "method": "Hand-checked keyframes followed by local lip evidence and slight temporal smoothing.",
+      "positions": [
+        {
+          "angle": 0.004,
+          "center": [
+            244.77,
+            358.4
+          ],
+          "coords": [
+            213,
+            334
+          ],
+          "profileWeight": 0.0034
+        },
+        {
+          "angle": 0.004,
+          "center": [
+            244.43,
+            359.0
+          ],
+          "coords": [
+            212,
+            335
+          ],
+          "profileWeight": 0.0085
+        },
+        {
+          "angle": 0.003,
+          "center": [
+            244.08,
+            359.52
+          ],
+          "coords": [
+            212,
+            336
+          ],
+          "profileWeight": 0.0138
+        },
+        {
+          "angle": 0.001,
+          "center": [
+            243.66,
+            360.0
+          ],
+          "coords": [
+            212,
+            336
+          ],
+          "profileWeight": 0.0199
+        },
+        {
+          "angle": -0.003,
+          "center": [
+            243.2,
+            360.51
+          ],
+          "coords": [
+            211,
+            337
+          ],
+          "profileWeight": 0.0269
+        },
+        {
+          "angle": -0.008,
+          "center": [
+            242.77,
+            361.06
+          ],
+          "coords": [
+            211,
+            337
+          ],
+          "profileWeight": 0.0332
+        },
+        {
+          "angle": -0.013,
+          "center": [
+            242.49,
+            361.69
+          ],
+          "coords": [
+            210,
+            338
+          ],
+          "profileWeight": 0.0374
+        },
+        {
+          "angle": -0.016,
+          "center": [
+            242.3,
+            362.36
+          ],
+          "coords": [
+            210,
+            338
+          ],
+          "profileWeight": 0.0403
+        },
+        {
+          "angle": -0.018,
+          "center": [
+            242.07,
+            363.07
+          ],
+          "coords": [
+            210,
+            339
+          ],
+          "profileWeight": 0.0438
+        },
+        {
+          "angle": -0.02,
+          "center": [
+            241.75,
+            363.82
+          ],
+          "coords": [
+            210,
+            340
+          ],
+          "profileWeight": 0.0485
+        },
+        {
+          "angle": -0.022,
+          "center": [
+            241.39,
+            364.61
+          ],
+          "coords": [
+            209,
+            341
+          ],
+          "profileWeight": 0.0538
+        },
+        {
+          "angle": -0.022,
+          "center": [
+            241.04,
+            365.39
+          ],
+          "coords": [
+            209,
+            341
+          ],
+          "profileWeight": 0.0591
+        },
+        {
+          "angle": -0.021,
+          "center": [
+            240.75,
+            366.12
+          ],
+          "coords": [
+            209,
+            342
+          ],
+          "profileWeight": 0.0634
+        },
+        {
+          "angle": -0.02,
+          "center": [
+            240.18,
+            366.91
+          ],
+          "coords": [
+            208,
+            343
+          ],
+          "profileWeight": 0.0719
+        },
+        {
+          "angle": -0.018,
+          "center": [
+            239.58,
+            367.69
+          ],
+          "coords": [
+            208,
+            344
+          ],
+          "profileWeight": 0.0808
+        },
+        {
+          "angle": -0.017,
+          "center": [
+            238.87,
+            368.49
+          ],
+          "coords": [
+            207,
+            344
+          ],
+          "profileWeight": 0.0915
+        },
+        {
+          "angle": -0.016,
+          "center": [
+            238.08,
+            369.31
+          ],
+          "coords": [
+            206,
+            345
+          ],
+          "profileWeight": 0.1032
+        },
+        {
+          "angle": -0.017,
+          "center": [
+            237.27,
+            370.15
+          ],
+          "coords": [
+            205,
+            346
+          ],
+          "profileWeight": 0.1154
+        },
+        {
+          "angle": -0.018,
+          "center": [
+            236.44,
+            371.01
+          ],
+          "coords": [
+            204,
+            347
+          ],
+          "profileWeight": 0.1278
+        },
+        {
+          "angle": -0.018,
+          "center": [
+            235.61,
+            371.86
+          ],
+          "coords": [
+            204,
+            348
+          ],
+          "profileWeight": 0.1402
+        },
+        {
+          "angle": -0.018,
+          "center": [
+            234.81,
+            372.66
+          ],
+          "coords": [
+            203,
+            349
+          ],
+          "profileWeight": 0.1521
+        },
+        {
+          "angle": -0.017,
+          "center": [
+            234.06,
+            373.4
+          ],
+          "coords": [
+            202,
+            349
+          ],
+          "profileWeight": 0.1633
+        },
+        {
+          "angle": -0.015,
+          "center": [
+            233.36,
+            374.1
+          ],
+          "coords": [
+            201,
+            350
+          ],
+          "profileWeight": 0.1738
+        },
+        {
+          "angle": -0.013,
+          "center": [
+            232.68,
+            374.82
+          ],
+          "coords": [
+            201,
+            351
+          ],
+          "profileWeight": 0.1838
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            231.99,
+            375.64
+          ],
+          "coords": [
+            200,
+            352
+          ],
+          "profileWeight": 0.1942
+        },
+        {
+          "angle": -0.008,
+          "center": [
+            231.12,
+            375.92
+          ],
+          "coords": [
+            199,
+            352
+          ],
+          "profileWeight": 0.2072
+        },
+        {
+          "angle": -0.006,
+          "center": [
+            230.29,
+            376.3
+          ],
+          "coords": [
+            198,
+            352
+          ],
+          "profileWeight": 0.2195
+        },
+        {
+          "angle": -0.004,
+          "center": [
+            229.58,
+            376.69
+          ],
+          "coords": [
+            198,
+            353
+          ],
+          "profileWeight": 0.2302
+        },
+        {
+          "angle": -0.002,
+          "center": [
+            228.93,
+            376.99
+          ],
+          "coords": [
+            197,
+            353
+          ],
+          "profileWeight": 0.2399
+        },
+        {
+          "angle": 0.0,
+          "center": [
+            228.26,
+            377.2
+          ],
+          "coords": [
+            196,
+            353
+          ],
+          "profileWeight": 0.2498
+        },
+        {
+          "angle": 0.002,
+          "center": [
+            227.54,
+            377.31
+          ],
+          "coords": [
+            196,
+            353
+          ],
+          "profileWeight": 0.2606
+        },
+        {
+          "angle": 0.003,
+          "center": [
+            226.81,
+            377.34
+          ],
+          "coords": [
+            195,
+            353
+          ],
+          "profileWeight": 0.2715
+        },
+        {
+          "angle": 0.003,
+          "center": [
+            226.14,
+            377.3
+          ],
+          "coords": [
+            194,
+            353
+          ],
+          "profileWeight": 0.2815
+        },
+        {
+          "angle": 0.004,
+          "center": [
+            225.49,
+            377.18
+          ],
+          "coords": [
+            193,
+            353
+          ],
+          "profileWeight": 0.2912
+        },
+        {
+          "angle": 0.006,
+          "center": [
+            224.73,
+            376.98
+          ],
+          "coords": [
+            193,
+            353
+          ],
+          "profileWeight": 0.3025
+        },
+        {
+          "angle": 0.011,
+          "center": [
+            223.79,
+            376.75
+          ],
+          "coords": [
+            192,
+            353
+          ],
+          "profileWeight": 0.3166
+        },
+        {
+          "angle": 0.019,
+          "center": [
+            222.74,
+            376.63
+          ],
+          "coords": [
+            191,
+            353
+          ],
+          "profileWeight": 0.3323
+        },
+        {
+          "angle": 0.027,
+          "center": [
+            221.32,
+            375.72
+          ],
+          "coords": [
+            189,
+            352
+          ],
+          "profileWeight": 0.3534
+        },
+        {
+          "angle": 0.036,
+          "center": [
+            220.01,
+            374.97
+          ],
+          "coords": [
+            188,
+            351
+          ],
+          "profileWeight": 0.3729
+        },
+        {
+          "angle": 0.043,
+          "center": [
+            218.77,
+            374.27
+          ],
+          "coords": [
+            187,
+            350
+          ],
+          "profileWeight": 0.3915
+        },
+        {
+          "angle": 0.049,
+          "center": [
+            217.53,
+            373.54
+          ],
+          "coords": [
+            186,
+            350
+          ],
+          "profileWeight": 0.41
+        },
+        {
+          "angle": 0.054,
+          "center": [
+            216.28,
+            372.74
+          ],
+          "coords": [
+            184,
+            349
+          ],
+          "profileWeight": 0.4286
+        },
+        {
+          "angle": 0.059,
+          "center": [
+            215.03,
+            371.91
+          ],
+          "coords": [
+            183,
+            348
+          ],
+          "profileWeight": 0.4473
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            213.78,
+            371.03
+          ],
+          "coords": [
+            182,
+            347
+          ],
+          "profileWeight": 0.4659
+        },
+        {
+          "angle": 0.067,
+          "center": [
+            212.6,
+            370.13
+          ],
+          "coords": [
+            181,
+            346
+          ],
+          "profileWeight": 0.4836
+        },
+        {
+          "angle": 0.07,
+          "center": [
+            211.48,
+            369.19
+          ],
+          "coords": [
+            179,
+            345
+          ],
+          "profileWeight": 0.5003
+        },
+        {
+          "angle": 0.073,
+          "center": [
+            210.41,
+            368.23
+          ],
+          "coords": [
+            178,
+            344
+          ],
+          "profileWeight": 0.5163
+        },
+        {
+          "angle": 0.076,
+          "center": [
+            209.36,
+            367.24
+          ],
+          "coords": [
+            177,
+            343
+          ],
+          "profileWeight": 0.5319
+        },
+        {
+          "angle": 0.079,
+          "center": [
+            208.32,
+            366.23
+          ],
+          "coords": [
+            176,
+            342
+          ],
+          "profileWeight": 0.5475
+        },
+        {
+          "angle": 0.079,
+          "center": [
+            206.86,
+            365.28
+          ],
+          "coords": [
+            175,
+            341
+          ],
+          "profileWeight": 0.5692
+        },
+        {
+          "angle": 0.076,
+          "center": [
+            205.3,
+            364.26
+          ],
+          "coords": [
+            173,
+            340
+          ],
+          "profileWeight": 0.5925
+        },
+        {
+          "angle": 0.069,
+          "center": [
+            203.67,
+            363.15
+          ],
+          "coords": [
+            172,
+            339
+          ],
+          "profileWeight": 0.6168
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            201.96,
+            361.96
+          ],
+          "coords": [
+            170,
+            338
+          ],
+          "profileWeight": 0.6424
+        },
+        {
+          "angle": 0.06,
+          "center": [
+            200.17,
+            360.83
+          ],
+          "coords": [
+            168,
+            337
+          ],
+          "profileWeight": 0.6691
+        },
+        {
+          "angle": 0.062,
+          "center": [
+            198.39,
+            359.83
+          ],
+          "coords": [
+            166,
+            336
+          ],
+          "profileWeight": 0.6956
+        },
+        {
+          "angle": 0.066,
+          "center": [
+            196.72,
+            358.94
+          ],
+          "coords": [
+            165,
+            335
+          ],
+          "profileWeight": 0.7205
+        },
+        {
+          "angle": 0.071,
+          "center": [
+            195.17,
+            358.14
+          ],
+          "coords": [
+            163,
+            334
+          ],
+          "profileWeight": 0.7438
+        },
+        {
+          "angle": 0.075,
+          "center": [
+            193.71,
+            357.41
+          ],
+          "coords": [
+            162,
+            333
+          ],
+          "profileWeight": 0.7655
+        },
+        {
+          "angle": 0.079,
+          "center": [
+            192.3,
+            356.73
+          ],
+          "coords": [
+            160,
+            333
+          ],
+          "profileWeight": 0.7865
+        },
+        {
+          "angle": 0.082,
+          "center": [
+            190.9,
+            356.05
+          ],
+          "coords": [
+            159,
+            332
+          ],
+          "profileWeight": 0.8074
+        },
+        {
+          "angle": 0.085,
+          "center": [
+            189.5,
+            355.32
+          ],
+          "coords": [
+            157,
+            331
+          ],
+          "profileWeight": 0.8284
+        },
+        {
+          "angle": 0.087,
+          "center": [
+            188.93,
+            355.09
+          ],
+          "coords": [
+            157,
+            331
+          ],
+          "profileWeight": 0.8369
+        },
+        {
+          "angle": 0.088,
+          "center": [
+            188.25,
+            354.78
+          ],
+          "coords": [
+            156,
+            331
+          ],
+          "profileWeight": 0.847
+        },
+        {
+          "angle": 0.087,
+          "center": [
+            187.39,
+            354.44
+          ],
+          "coords": [
+            155,
+            330
+          ],
+          "profileWeight": 0.8598
+        },
+        {
+          "angle": 0.084,
+          "center": [
+            186.42,
+            354.12
+          ],
+          "coords": [
+            154,
+            330
+          ],
+          "profileWeight": 0.8744
+        },
+        {
+          "angle": 0.082,
+          "center": [
+            185.5,
+            353.83
+          ],
+          "coords": [
+            154,
+            330
+          ],
+          "profileWeight": 0.888
+        },
+        {
+          "angle": 0.079,
+          "center": [
+            184.75,
+            353.56
+          ],
+          "coords": [
+            153,
+            330
+          ],
+          "profileWeight": 0.8992
+        },
+        {
+          "angle": 0.075,
+          "center": [
+            184.15,
+            353.33
+          ],
+          "coords": [
+            152,
+            329
+          ],
+          "profileWeight": 0.9081
+        },
+        {
+          "angle": 0.069,
+          "center": [
+            183.63,
+            353.13
+          ],
+          "coords": [
+            152,
+            329
+          ],
+          "profileWeight": 0.9159
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            183.09,
+            352.96
+          ],
+          "coords": [
+            151,
+            329
+          ],
+          "profileWeight": 0.924
+        },
+        {
+          "angle": 0.056,
+          "center": [
+            182.47,
+            352.82
+          ],
+          "coords": [
+            150,
+            329
+          ],
+          "profileWeight": 0.9333
+        },
+        {
+          "angle": 0.052,
+          "center": [
+            181.74,
+            352.66
+          ],
+          "coords": [
+            150,
+            329
+          ],
+          "profileWeight": 0.9442
+        },
+        {
+          "angle": 0.05,
+          "center": [
+            180.93,
+            352.43
+          ],
+          "coords": [
+            149,
+            328
+          ],
+          "profileWeight": 0.9562
+        },
+        {
+          "angle": 0.05,
+          "center": [
+            180.83,
+            352.71
+          ],
+          "coords": [
+            149,
+            329
+          ],
+          "profileWeight": 0.9577
+        },
+        {
+          "angle": 0.052,
+          "center": [
+            180.72,
+            352.94
+          ],
+          "coords": [
+            149,
+            329
+          ],
+          "profileWeight": 0.9594
+        },
+        {
+          "angle": 0.055,
+          "center": [
+            180.62,
+            353.18
+          ],
+          "coords": [
+            149,
+            329
+          ],
+          "profileWeight": 0.961
+        },
+        {
+          "angle": 0.058,
+          "center": [
+            180.54,
+            353.48
+          ],
+          "coords": [
+            149,
+            329
+          ],
+          "profileWeight": 0.9621
+        },
+        {
+          "angle": 0.061,
+          "center": [
+            180.47,
+            353.84
+          ],
+          "coords": [
+            148,
+            330
+          ],
+          "profileWeight": 0.9631
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            180.4,
+            354.2
+          ],
+          "coords": [
+            148,
+            330
+          ],
+          "profileWeight": 0.9642
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            180.32,
+            354.54
+          ],
+          "coords": [
+            148,
+            331
+          ],
+          "profileWeight": 0.9653
+        },
+        {
+          "angle": 0.062,
+          "center": [
+            180.25,
+            354.89
+          ],
+          "coords": [
+            148,
+            331
+          ],
+          "profileWeight": 0.9665
+        },
+        {
+          "angle": 0.06,
+          "center": [
+            180.19,
+            355.26
+          ],
+          "coords": [
+            148,
+            331
+          ],
+          "profileWeight": 0.9674
+        },
+        {
+          "angle": 0.058,
+          "center": [
+            180.16,
+            355.65
+          ],
+          "coords": [
+            148,
+            332
+          ],
+          "profileWeight": 0.9678
+        },
+        {
+          "angle": 0.057,
+          "center": [
+            180.19,
+            356.08
+          ],
+          "coords": [
+            148,
+            332
+          ],
+          "profileWeight": 0.9674
+        },
+        {
+          "angle": 0.057,
+          "center": [
+            180.26,
+            356.53
+          ],
+          "coords": [
+            148,
+            333
+          ],
+          "profileWeight": 0.9662
+        },
+        {
+          "angle": 0.057,
+          "center": [
+            180.34,
+            356.9
+          ],
+          "coords": [
+            148,
+            333
+          ],
+          "profileWeight": 0.965
+        },
+        {
+          "angle": 0.057,
+          "center": [
+            180.39,
+            357.27
+          ],
+          "coords": [
+            148,
+            333
+          ],
+          "profileWeight": 0.9644
+        },
+        {
+          "angle": 0.056,
+          "center": [
+            180.4,
+            357.61
+          ],
+          "coords": [
+            148,
+            334
+          ],
+          "profileWeight": 0.9642
+        },
+        {
+          "angle": 0.055,
+          "center": [
+            180.41,
+            357.95
+          ],
+          "coords": [
+            148,
+            334
+          ],
+          "profileWeight": 0.9641
+        },
+        {
+          "angle": 0.053,
+          "center": [
+            180.44,
+            358.3
+          ],
+          "coords": [
+            148,
+            334
+          ],
+          "profileWeight": 0.9635
+        },
+        {
+          "angle": 0.051,
+          "center": [
+            180.49,
+            358.69
+          ],
+          "coords": [
+            148,
+            335
+          ],
+          "profileWeight": 0.9628
+        },
+        {
+          "angle": 0.048,
+          "center": [
+            180.51,
+            359.07
+          ],
+          "coords": [
+            149,
+            335
+          ],
+          "profileWeight": 0.9625
+        },
+        {
+          "angle": 0.046,
+          "center": [
+            180.51,
+            359.41
+          ],
+          "coords": [
+            149,
+            335
+          ],
+          "profileWeight": 0.9626
+        },
+        {
+          "angle": 0.045,
+          "center": [
+            180.49,
+            359.71
+          ],
+          "coords": [
+            148,
+            336
+          ],
+          "profileWeight": 0.9628
+        },
+        {
+          "angle": 0.044,
+          "center": [
+            180.5,
+            359.99
+          ],
+          "coords": [
+            148,
+            336
+          ],
+          "profileWeight": 0.9627
+        },
+        {
+          "angle": 0.044,
+          "center": [
+            180.51,
+            360.26
+          ],
+          "coords": [
+            149,
+            336
+          ],
+          "profileWeight": 0.9626
+        },
+        {
+          "angle": 0.045,
+          "center": [
+            180.52,
+            360.56
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9624
+        },
+        {
+          "angle": 0.046,
+          "center": [
+            180.53,
+            360.65
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9623
+        },
+        {
+          "angle": 0.048,
+          "center": [
+            180.55,
+            360.76
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9619
+        },
+        {
+          "angle": 0.05,
+          "center": [
+            180.59,
+            360.86
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9613
+        },
+        {
+          "angle": 0.051,
+          "center": [
+            180.64,
+            360.9
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9605
+        },
+        {
+          "angle": 0.053,
+          "center": [
+            180.69,
+            360.89
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9599
+        },
+        {
+          "angle": 0.056,
+          "center": [
+            180.71,
+            360.83
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9596
+        },
+        {
+          "angle": 0.058,
+          "center": [
+            180.71,
+            360.75
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9595
+        },
+        {
+          "angle": 0.062,
+          "center": [
+            180.72,
+            360.67
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9595
+        },
+        {
+          "angle": 0.065,
+          "center": [
+            180.72,
+            360.55
+          ],
+          "coords": [
+            149,
+            337
+          ],
+          "profileWeight": 0.9593
+        },
+        {
+          "angle": 0.069,
+          "center": [
+            180.73,
+            360.39
+          ],
+          "coords": [
+            149,
+            336
+          ],
+          "profileWeight": 0.9593
+        },
+        {
+          "angle": 0.071,
+          "center": [
+            180.72,
+            360.19
+          ],
+          "coords": [
+            149,
+            336
+          ],
+          "profileWeight": 0.9594
+        },
+        {
+          "angle": 0.071,
+          "center": [
+            180.7,
+            360.04
+          ],
+          "coords": [
+            149,
+            336
+          ],
+          "profileWeight": 0.9598
+        },
+        {
+          "angle": 0.069,
+          "center": [
+            180.66,
+            359.61
+          ],
+          "coords": [
+            149,
+            336
+          ],
+          "profileWeight": 0.9603
+        },
+        {
+          "angle": 0.067,
+          "center": [
+            180.61,
+            359.24
+          ],
+          "coords": [
+            149,
+            335
+          ],
+          "profileWeight": 0.961
+        },
+        {
+          "angle": 0.065,
+          "center": [
+            180.56,
+            358.87
+          ],
+          "coords": [
+            149,
+            335
+          ],
+          "profileWeight": 0.9619
+        },
+        {
+          "angle": 0.064,
+          "center": [
+            180.52,
+            358.5
+          ],
+          "coords": [
+            149,
+            334
+          ],
+          "profileWeight": 0.9623
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            180.57,
+            358.12
+          ],
+          "coords": [
+            149,
+            334
+          ],
+          "profileWeight": 0.9617
+        },
+        {
+          "angle": 0.063,
+          "center": [
+            180.68,
+            357.73
+          ],
+          "coords": [
+            149,
+            334
+          ],
+          "profileWeight": 0.9599
+        },
+        {
+          "angle": 0.064,
+          "center": [
+            180.8,
+            357.35
+          ],
+          "coords": [
+            149,
+            333
+          ],
+          "profileWeight": 0.9582
+        },
+        {
+          "angle": 0.065,
+          "center": [
+            180.87,
+            356.98
+          ],
+          "coords": [
+            149,
+            333
+          ],
+          "profileWeight": 0.9572
+        },
+        {
+          "angle": 0.066,
+          "center": [
+            180.88,
+            356.62
+          ],
+          "coords": [
+            149,
+            333
+          ],
+          "profileWeight": 0.9571
+        },
+        {
+          "angle": 0.067,
+          "center": [
+            180.85,
+            356.22
+          ],
+          "coords": [
+            149,
+            332
+          ],
+          "profileWeight": 0.9575
+        },
+        {
+          "angle": 0.066,
+          "center": [
+            180.83,
+            355.81
+          ],
+          "coords": [
+            149,
+            332
+          ],
+          "profileWeight": 0.9577
+        },
+        {
+          "angle": 0.066,
+          "center": [
+            180.87,
+            355.44
+          ],
+          "coords": [
+            149,
+            331
+          ],
+          "profileWeight": 0.9571
+        },
+        {
+          "angle": 0.065,
+          "center": [
+            180.61,
+            354.82
+          ],
+          "coords": [
+            149,
+            331
+          ],
+          "profileWeight": 0.9611
+        },
+        {
+          "angle": 0.065,
+          "center": [
+            180.31,
+            354.22
+          ],
+          "coords": [
+            148,
+            330
+          ],
+          "profileWeight": 0.9655
+        },
+        {
+          "angle": 0.066,
+          "center": [
+            179.99,
+            353.59
+          ],
+          "coords": [
+            148,
+            330
+          ],
+          "profileWeight": 0.9704
+        }
+      ],
+      "referenceAnchors": [
+        [
+          0,
+          245,
+          359
+        ],
+        [
+          12,
+          241,
+          367
+        ],
+        [
+          24,
+          233,
+          376
+        ],
+        [
+          36,
+          223,
+          377
+        ],
+        [
+          48,
+          208,
+          366
+        ],
+        [
+          60,
+          189,
+          356
+        ],
+        [
+          72,
+          180,
+          353
+        ],
+        [
+          84,
+          180,
+          357
+        ],
+        [
+          96,
+          180,
+          360
+        ],
+        [
+          108,
+          180,
+          360
+        ],
+        [
+          120,
+          180,
+          356
+        ],
+        [
+          123,
+          179,
+          354
+        ]
+      ],
+      "route": "DA",
+      "sha256": "edf84d9c54fea82afcced854ef8ac0792361408bb8a44ef7e7fa9b3757a23935",
+      "size": [
+        64,
+        48
+      ],
+      "sourceSha256": "3cc7c6fe5955c3b383a1d957adac6073dc47837109d7c4c179972c7ba080e35b"
+    },
+    "head-D/head-B": {
+      "cols": 16,
+      "fps": 24,
+      "image": "./assets/layers/mouth-DB.png",
+      "method": "Hand-checked keyframes followed by local lip evidence and slight temporal smoothing.",
+      "positions": [
+        {
+          "angle": -0.012,
+          "center": [
+            244.66,
+            358.51
+          ],
+          "coords": [
+            213,
+            335
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.012,
+          "center": [
+            244.48,
+            358.97
+          ],
+          "coords": [
+            212,
+            335
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.011,
+          "center": [
+            244.23,
+            359.37
+          ],
+          "coords": [
+            212,
+            335
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.011,
+          "center": [
+            243.97,
+            359.77
+          ],
+          "coords": [
+            212,
+            336
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            243.71,
+            360.22
+          ],
+          "coords": [
+            212,
+            336
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            243.49,
+            360.74
+          ],
+          "coords": [
+            211,
+            337
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            243.31,
+            361.29
+          ],
+          "coords": [
+            211,
+            337
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            243.17,
+            361.86
+          ],
+          "coords": [
+            211,
+            338
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            243.05,
+            362.43
+          ],
+          "coords": [
+            211,
+            338
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            243.17,
+            363.12
+          ],
+          "coords": [
+            211,
+            339
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.009,
+          "center": [
+            243.32,
+            363.79
+          ],
+          "coords": [
+            211,
+            340
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.008,
+          "center": [
+            243.51,
+            364.46
+          ],
+          "coords": [
+            212,
+            340
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.006,
+          "center": [
+            243.72,
+            365.11
+          ],
+          "coords": [
+            212,
+            341
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.004,
+          "center": [
+            243.93,
+            365.75
+          ],
+          "coords": [
+            212,
+            342
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": -0.001,
+          "center": [
+            244.07,
+            366.41
+          ],
+          "coords": [
+            212,
+            342
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.003,
+          "center": [
+            244.15,
+            367.11
+          ],
+          "coords": [
+            212,
+            343
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.007,
+          "center": [
+            244.2,
+            367.84
+          ],
+          "coords": [
+            212,
+            344
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.013,
+          "center": [
+            244.22,
+            368.6
+          ],
+          "coords": [
+            212,
+            345
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.018,
+          "center": [
+            244.26,
+            369.36
+          ],
+          "coords": [
+            212,
+            345
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.021,
+          "center": [
+            244.4,
+            370.08
+          ],
+          "coords": [
+            212,
+            346
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.023,
+          "center": [
+            244.6,
+            370.78
+          ],
+          "coords": [
+            213,
+            347
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.023,
+          "center": [
+            244.79,
+            371.47
+          ],
+          "coords": [
+            213,
+            347
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            244.9,
+            372.14
+          ],
+          "coords": [
+            213,
+            348
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            244.95,
+            372.77
+          ],
+          "coords": [
+            213,
+            349
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            244.98,
+            373.36
+          ],
+          "coords": [
+            213,
+            349
+          ],
+          "profileWeight": 0.0
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            245.5,
+            373.94
+          ],
+          "coords": [
+            214,
+            350
+          ],
+          "profileWeight": 0.0071
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            246.03,
+            374.52
+          ],
+          "coords": [
+            214,
+            351
+          ],
+          "profileWeight": 0.0145
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            246.59,
+            375.07
+          ],
+          "coords": [
+            215,
+            351
+          ],
+          "profileWeight": 0.0224
+        },
+        {
+          "angle": 0.021,
+          "center": [
+            247.23,
+            375.56
+          ],
+          "coords": [
+            215,
+            352
+          ],
+          "profileWeight": 0.0314
+        },
+        {
+          "angle": 0.02,
+          "center": [
+            247.98,
+            376.01
+          ],
+          "coords": [
+            216,
+            352
+          ],
+          "profileWeight": 0.042
+        },
+        {
+          "angle": 0.017,
+          "center": [
+            248.77,
+            376.43
+          ],
+          "coords": [
+            217,
+            352
+          ],
+          "profileWeight": 0.0531
+        },
+        {
+          "angle": 0.014,
+          "center": [
+            249.53,
+            376.91
+          ],
+          "coords": [
+            218,
+            353
+          ],
+          "profileWeight": 0.0638
+        },
+        {
+          "angle": 0.011,
+          "center": [
+            250.26,
+            377.49
+          ],
+          "coords": [
+            218,
+            353
+          ],
+          "profileWeight": 0.0741
+        },
+        {
+          "angle": 0.009,
+          "center": [
+            251.75,
+            377.67
+          ],
+          "coords": [
+            220,
+            354
+          ],
+          "profileWeight": 0.0951
+        },
+        {
+          "angle": 0.008,
+          "center": [
+            253.25,
+            377.84
+          ],
+          "coords": [
+            221,
+            354
+          ],
+          "profileWeight": 0.1161
+        },
+        {
+          "angle": 0.006,
+          "center": [
+            254.69,
+            377.95
+          ],
+          "coords": [
+            223,
+            354
+          ],
+          "profileWeight": 0.1365
+        },
+        {
+          "angle": 0.004,
+          "center": [
+            256.07,
+            378.0
+          ],
+          "coords": [
+            224,
+            354
+          ],
+          "profileWeight": 0.156
+        },
+        {
+          "angle": 0.002,
+          "center": [
+            257.42,
+            377.99
+          ],
+          "coords": [
+            225,
+            354
+          ],
+          "profileWeight": 0.1749
+        },
+        {
+          "angle": -0.0,
+          "center": [
+            258.75,
+            377.94
+          ],
+          "coords": [
+            227,
+            354
+          ],
+          "profileWeight": 0.1936
+        },
+        {
+          "angle": -0.002,
+          "center": [
+            260.08,
+            377.89
+          ],
+          "coords": [
+            228,
+            354
+          ],
+          "profileWeight": 0.2124
+        },
+        {
+          "angle": -0.002,
+          "center": [
+            261.43,
+            377.92
+          ],
+          "coords": [
+            229,
+            354
+          ],
+          "profileWeight": 0.2314
+        },
+        {
+          "angle": -0.001,
+          "center": [
+            262.92,
+            377.47
+          ],
+          "coords": [
+            231,
+            353
+          ],
+          "profileWeight": 0.2524
+        },
+        {
+          "angle": -0.001,
+          "center": [
+            264.4,
+            377.12
+          ],
+          "coords": [
+            232,
+            353
+          ],
+          "profileWeight": 0.2732
+        },
+        {
+          "angle": -0.001,
+          "center": [
+            265.92,
+            376.78
+          ],
+          "coords": [
+            234,
+            353
+          ],
+          "profileWeight": 0.2947
+        },
+        {
+          "angle": -0.003,
+          "center": [
+            267.53,
+            376.38
+          ],
+          "coords": [
+            236,
+            352
+          ],
+          "profileWeight": 0.3174
+        },
+        {
+          "angle": -0.006,
+          "center": [
+            269.16,
+            375.95
+          ],
+          "coords": [
+            237,
+            352
+          ],
+          "profileWeight": 0.3403
+        },
+        {
+          "angle": -0.01,
+          "center": [
+            270.71,
+            375.5
+          ],
+          "coords": [
+            239,
+            352
+          ],
+          "profileWeight": 0.3621
+        },
+        {
+          "angle": -0.013,
+          "center": [
+            272.21,
+            375.04
+          ],
+          "coords": [
+            240,
+            351
+          ],
+          "profileWeight": 0.3832
+        },
+        {
+          "angle": -0.015,
+          "center": [
+            273.74,
+            374.56
+          ],
+          "coords": [
+            242,
+            351
+          ],
+          "profileWeight": 0.4048
+        },
+        {
+          "angle": -0.015,
+          "center": [
+            274.56,
+            373.95
+          ],
+          "coords": [
+            243,
+            350
+          ],
+          "profileWeight": 0.4163
+        },
+        {
+          "angle": -0.014,
+          "center": [
+            275.36,
+            373.3
+          ],
+          "coords": [
+            243,
+            349
+          ],
+          "profileWeight": 0.4276
+        },
+        {
+          "angle": -0.013,
+          "center": [
+            276.11,
+            372.61
+          ],
+          "coords": [
+            244,
+            349
+          ],
+          "profileWeight": 0.4381
+        },
+        {
+          "angle": -0.012,
+          "center": [
+            276.8,
+            371.87
+          ],
+          "coords": [
+            245,
+            348
+          ],
+          "profileWeight": 0.4479
+        },
+        {
+          "angle": -0.011,
+          "center": [
+            277.44,
+            371.13
+          ],
+          "coords": [
+            245,
+            347
+          ],
+          "profileWeight": 0.4569
+        },
+        {
+          "angle": -0.009,
+          "center": [
+            278.05,
+            370.43
+          ],
+          "coords": [
+            246,
+            346
+          ],
+          "profileWeight": 0.4655
+        },
+        {
+          "angle": -0.007,
+          "center": [
+            278.66,
+            369.78
+          ],
+          "coords": [
+            247,
+            346
+          ],
+          "profileWeight": 0.4741
+        },
+        {
+          "angle": -0.003,
+          "center": [
+            279.24,
+            369.18
+          ],
+          "coords": [
+            247,
+            345
+          ],
+          "profileWeight": 0.4822
+        },
+        {
+          "angle": 0.002,
+          "center": [
+            280.7,
+            368.39
+          ],
+          "coords": [
+            249,
+            344
+          ],
+          "profileWeight": 0.5028
+        },
+        {
+          "angle": 0.007,
+          "center": [
+            282.01,
+            367.68
+          ],
+          "coords": [
+            250,
+            344
+          ],
+          "profileWeight": 0.5212
+        },
+        {
+          "angle": 0.012,
+          "center": [
+            283.29,
+            367.05
+          ],
+          "coords": [
+            251,
+            343
+          ],
+          "profileWeight": 0.5393
+        },
+        {
+          "angle": 0.018,
+          "center": [
+            284.68,
+            366.47
+          ],
+          "coords": [
+            253,
+            342
+          ],
+          "profileWeight": 0.5589
+        },
+        {
+          "angle": 0.022,
+          "center": [
+            286.17,
+            365.92
+          ],
+          "coords": [
+            254,
+            342
+          ],
+          "profileWeight": 0.5799
+        },
+        {
+          "angle": 0.025,
+          "center": [
+            287.74,
+            365.32
+          ],
+          "coords": [
+            256,
+            341
+          ],
+          "profileWeight": 0.602
+        },
+        {
+          "angle": 0.025,
+          "center": [
+            289.44,
+            364.63
+          ],
+          "coords": [
+            257,
+            341
+          ],
+          "profileWeight": 0.6258
+        },
+        {
+          "angle": 0.02,
+          "center": [
+            291.26,
+            363.77
+          ],
+          "coords": [
+            259,
+            340
+          ],
+          "profileWeight": 0.6515
+        },
+        {
+          "angle": 0.011,
+          "center": [
+            292.51,
+            363.37
+          ],
+          "coords": [
+            261,
+            339
+          ],
+          "profileWeight": 0.6691
+        },
+        {
+          "angle": -0.0,
+          "center": [
+            293.77,
+            362.88
+          ],
+          "coords": [
+            262,
+            339
+          ],
+          "profileWeight": 0.6869
+        },
+        {
+          "angle": -0.014,
+          "center": [
+            295.11,
+            362.34
+          ],
+          "coords": [
+            263,
+            338
+          ],
+          "profileWeight": 0.7058
+        },
+        {
+          "angle": -0.031,
+          "center": [
+            296.6,
+            361.79
+          ],
+          "coords": [
+            265,
+            338
+          ],
+          "profileWeight": 0.7268
+        },
+        {
+          "angle": -0.048,
+          "center": [
+            298.16,
+            361.23
+          ],
+          "coords": [
+            266,
+            337
+          ],
+          "profileWeight": 0.7488
+        },
+        {
+          "angle": -0.063,
+          "center": [
+            299.66,
+            360.7
+          ],
+          "coords": [
+            268,
+            337
+          ],
+          "profileWeight": 0.7699
+        },
+        {
+          "angle": -0.076,
+          "center": [
+            301.04,
+            360.21
+          ],
+          "coords": [
+            269,
+            336
+          ],
+          "profileWeight": 0.7893
+        },
+        {
+          "angle": -0.087,
+          "center": [
+            302.37,
+            359.71
+          ],
+          "coords": [
+            270,
+            336
+          ],
+          "profileWeight": 0.808
+        },
+        {
+          "angle": -0.096,
+          "center": [
+            303.85,
+            359.46
+          ],
+          "coords": [
+            272,
+            335
+          ],
+          "profileWeight": 0.8289
+        },
+        {
+          "angle": -0.103,
+          "center": [
+            305.36,
+            359.23
+          ],
+          "coords": [
+            273,
+            335
+          ],
+          "profileWeight": 0.8502
+        },
+        {
+          "angle": -0.109,
+          "center": [
+            306.88,
+            359.1
+          ],
+          "coords": [
+            275,
+            335
+          ],
+          "profileWeight": 0.8716
+        },
+        {
+          "angle": -0.113,
+          "center": [
+            308.32,
+            359.09
+          ],
+          "coords": [
+            276,
+            335
+          ],
+          "profileWeight": 0.8918
+        },
+        {
+          "angle": -0.117,
+          "center": [
+            309.61,
+            359.17
+          ],
+          "coords": [
+            278,
+            335
+          ],
+          "profileWeight": 0.9099
+        },
+        {
+          "angle": -0.121,
+          "center": [
+            310.74,
+            359.32
+          ],
+          "coords": [
+            279,
+            335
+          ],
+          "profileWeight": 0.926
+        },
+        {
+          "angle": -0.125,
+          "center": [
+            311.81,
+            359.5
+          ],
+          "coords": [
+            280,
+            335
+          ],
+          "profileWeight": 0.941
+        },
+        {
+          "angle": -0.129,
+          "center": [
+            312.89,
+            359.67
+          ],
+          "coords": [
+            281,
+            336
+          ],
+          "profileWeight": 0.9563
+        },
+        {
+          "angle": -0.134,
+          "center": [
+            313.07,
+            360.27
+          ],
+          "coords": [
+            281,
+            336
+          ],
+          "profileWeight": 0.9587
+        },
+        {
+          "angle": -0.139,
+          "center": [
+            313.32,
+            360.81
+          ],
+          "coords": [
+            281,
+            337
+          ],
+          "profileWeight": 0.9622
+        },
+        {
+          "angle": -0.144,
+          "center": [
+            313.54,
+            361.31
+          ],
+          "coords": [
+            282,
+            337
+          ],
+          "profileWeight": 0.9654
+        },
+        {
+          "angle": -0.147,
+          "center": [
+            313.7,
+            361.82
+          ],
+          "coords": [
+            282,
+            338
+          ],
+          "profileWeight": 0.9676
+        },
+        {
+          "angle": -0.148,
+          "center": [
+            313.83,
+            362.31
+          ],
+          "coords": [
+            282,
+            338
+          ],
+          "profileWeight": 0.9694
+        },
+        {
+          "angle": -0.149,
+          "center": [
+            314.01,
+            362.77
+          ],
+          "coords": [
+            282,
+            339
+          ],
+          "profileWeight": 0.9719
+        },
+        {
+          "angle": -0.148,
+          "center": [
+            314.24,
+            363.23
+          ],
+          "coords": [
+            282,
+            339
+          ],
+          "profileWeight": 0.9752
+        },
+        {
+          "angle": -0.146,
+          "center": [
+            314.51,
+            363.74
+          ],
+          "coords": [
+            283,
+            340
+          ],
+          "profileWeight": 0.979
+        },
+        {
+          "angle": -0.144,
+          "center": [
+            314.58,
+            363.94
+          ],
+          "coords": [
+            283,
+            340
+          ],
+          "profileWeight": 0.9799
+        },
+        {
+          "angle": -0.144,
+          "center": [
+            314.68,
+            364.18
+          ],
+          "coords": [
+            283,
+            340
+          ],
+          "profileWeight": 0.9814
+        },
+        {
+          "angle": -0.145,
+          "center": [
+            314.77,
+            364.42
+          ],
+          "coords": [
+            283,
+            340
+          ],
+          "profileWeight": 0.9827
+        },
+        {
+          "angle": -0.146,
+          "center": [
+            314.82,
+            364.64
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9834
+        },
+        {
+          "angle": -0.147,
+          "center": [
+            314.86,
+            364.82
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9839
+        },
+        {
+          "angle": -0.147,
+          "center": [
+            314.89,
+            364.96
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9844
+        },
+        {
+          "angle": -0.146,
+          "center": [
+            314.89,
+            365.09
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9844
+        },
+        {
+          "angle": -0.145,
+          "center": [
+            314.85,
+            365.25
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9839
+        },
+        {
+          "angle": -0.143,
+          "center": [
+            315.03,
+            364.95
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9863
+        },
+        {
+          "angle": -0.142,
+          "center": [
+            315.16,
+            364.65
+          ],
+          "coords": [
+            283,
+            341
+          ],
+          "profileWeight": 0.9882
+        },
+        {
+          "angle": -0.141,
+          "center": [
+            315.26,
+            364.32
+          ],
+          "coords": [
+            283,
+            340
+          ],
+          "profileWeight": 0.9896
+        },
+        {
+          "angle": -0.138,
+          "center": [
+            315.36,
+            363.94
+          ],
+          "coords": [
+            283,
+            340
+          ],
+          "profileWeight": 0.991
+        },
+        {
+          "angle": -0.134,
+          "center": [
+            315.47,
+            363.5
+          ],
+          "coords": [
+            283,
+            339
+          ],
+          "profileWeight": 0.9925
+        },
+        {
+          "angle": -0.129,
+          "center": [
+            315.6,
+            363.0
+          ],
+          "coords": [
+            284,
+            339
+          ],
+          "profileWeight": 0.9944
+        },
+        {
+          "angle": -0.124,
+          "center": [
+            315.77,
+            362.49
+          ],
+          "coords": [
+            284,
+            338
+          ],
+          "profileWeight": 0.9967
+        },
+        {
+          "angle": -0.121,
+          "center": [
+            315.96,
+            362.01
+          ],
+          "coords": [
+            284,
+            338
+          ],
+          "profileWeight": 0.9994
+        },
+        {
+          "angle": -0.119,
+          "center": [
+            315.83,
+            361.36
+          ],
+          "coords": [
+            284,
+            337
+          ],
+          "profileWeight": 0.9977
+        },
+        {
+          "angle": -0.12,
+          "center": [
+            315.78,
+            360.75
+          ],
+          "coords": [
+            284,
+            337
+          ],
+          "profileWeight": 0.9969
+        },
+        {
+          "angle": -0.122,
+          "center": [
+            315.75,
+            360.16
+          ],
+          "coords": [
+            284,
+            336
+          ],
+          "profileWeight": 0.9965
+        },
+        {
+          "angle": -0.125,
+          "center": [
+            315.7,
+            359.57
+          ],
+          "coords": [
+            284,
+            336
+          ],
+          "profileWeight": 0.9957
+        },
+        {
+          "angle": -0.129,
+          "center": [
+            315.61,
+            359.01
+          ],
+          "coords": [
+            284,
+            335
+          ],
+          "profileWeight": 0.9945
+        },
+        {
+          "angle": -0.133,
+          "center": [
+            315.53,
+            358.47
+          ],
+          "coords": [
+            284,
+            334
+          ],
+          "profileWeight": 0.9934
+        },
+        {
+          "angle": -0.138,
+          "center": [
+            315.47,
+            357.92
+          ],
+          "coords": [
+            283,
+            334
+          ],
+          "profileWeight": 0.9925
+        },
+        {
+          "angle": -0.142,
+          "center": [
+            315.41,
+            357.33
+          ],
+          "coords": [
+            283,
+            333
+          ],
+          "profileWeight": 0.9917
+        },
+        {
+          "angle": -0.146,
+          "center": [
+            315.45,
+            356.93
+          ],
+          "coords": [
+            283,
+            333
+          ],
+          "profileWeight": 0.9923
+        },
+        {
+          "angle": -0.15,
+          "center": [
+            315.46,
+            356.52
+          ],
+          "coords": [
+            283,
+            333
+          ],
+          "profileWeight": 0.9923
+        },
+        {
+          "angle": -0.152,
+          "center": [
+            315.44,
+            356.12
+          ],
+          "coords": [
+            283,
+            332
+          ],
+          "profileWeight": 0.9921
+        },
+        {
+          "angle": -0.152,
+          "center": [
+            315.41,
+            355.74
+          ],
+          "coords": [
+            283,
+            332
+          ],
+          "profileWeight": 0.9917
+        },
+        {
+          "angle": -0.15,
+          "center": [
+            315.39,
+            355.37
+          ],
+          "coords": [
+            283,
+            331
+          ],
+          "profileWeight": 0.9915
+        },
+        {
+          "angle": -0.148,
+          "center": [
+            315.38,
+            355.0
+          ],
+          "coords": [
+            283,
+            331
+          ],
+          "profileWeight": 0.9913
+        },
+        {
+          "angle": -0.145,
+          "center": [
+            315.4,
+            354.62
+          ],
+          "coords": [
+            283,
+            331
+          ],
+          "profileWeight": 0.9915
+        },
+        {
+          "angle": -0.141,
+          "center": [
+            315.44,
+            354.24
+          ],
+          "coords": [
+            283,
+            330
+          ],
+          "profileWeight": 0.9921
+        },
+        {
+          "angle": -0.139,
+          "center": [
+            315.49,
+            353.92
+          ],
+          "coords": [
+            283,
+            330
+          ],
+          "profileWeight": 0.9929
+        },
+        {
+          "angle": -0.138,
+          "center": [
+            315.53,
+            353.62
+          ],
+          "coords": [
+            284,
+            330
+          ],
+          "profileWeight": 0.9934
+        },
+        {
+          "angle": -0.137,
+          "center": [
+            315.54,
+            353.3
+          ],
+          "coords": [
+            284,
+            329
+          ],
+          "profileWeight": 0.9935
+        }
+      ],
+      "referenceAnchors": [
+        [
+          0,
+          245,
+          359
+        ],
+        [
+          8,
+          244,
+          363
+        ],
+        [
+          16,
+          245,
+          368
+        ],
+        [
+          24,
+          246,
+          373
+        ],
+        [
+          32,
+          251,
+          378
+        ],
+        [
+          40,
+          262,
+          379
+        ],
+        [
+          48,
+          274,
+          375
+        ],
+        [
+          56,
+          280,
+          370
+        ],
+        [
+          64,
+          294,
+          363
+        ],
+        [
+          72,
+          303,
+          361
+        ],
+        [
+          80,
+          313,
+          361
+        ],
+        [
+          88,
+          315,
+          365
+        ],
+        [
+          96,
+          315,
+          366
+        ],
+        [
+          104,
+          317,
+          363
+        ],
+        [
+          112,
+          316,
+          358
+        ],
+        [
+          120,
+          316,
+          355
+        ],
+        [
+          123,
+          316,
+          354
+        ]
+      ],
+      "route": "DB",
+      "sha256": "c281e75299b088b5c4f32b92b48a120c7c00901aad951228fa29af85806c0367",
+      "size": [
+        64,
+        48
+      ],
+      "sourceSha256": "700e674ac7d2e9f15a7e9ddcabfd10d13803b06a1e9e1ab2652bd05bf21cb1a1"
+    }
+  },
+  "voices": [
+    {
+      "file": "./assets/layers/whole.wav",
+      "sha256": "b775d4855457315314f2acfc28a1515d2a648da13df062370b687d26b508cb5e"
+    }
+  ]
+}

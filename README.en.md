@@ -2,6 +2,8 @@
 
 [简体中文](README.md) · English
 
+**[Try the V2 preview](https://li1fang.github.io/PoseRelay/preview-v2/en.html)** · [Download Dragon and Claude](https://github.com/li1fang/PoseRelay/releases/tag/v0.2.0-preview.1). Dragon keeps talking through a turn. Claude’s belt-lift plays at the approved pace. Open the browser demo or follow the bilingual launch guide in either offline ZIP.
+
 **Make 2D characters that speak, idle, and change poses.** Real-time layers drive lip sync, blinking, breathing, impact reactions, and fringe motion. Pre-rendered clips handle pose changes, then hand control back to the destination pose. The work of generating those clips happens during production.
 
 ![A silent clip of Claude lifting her belt as she turns back to face the viewer.](docs/media/belt-lift.webp)

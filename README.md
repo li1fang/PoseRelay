@@ -2,6 +2,8 @@
 
 简体中文 · [English](README.en.md)
 
+**[打开 V2 预览](https://li1fang.github.io/PoseRelay/preview-v2/)** · [下载龙宝和小克的离线包](https://github.com/li1fang/PoseRelay/releases/tag/v0.2.0-preview.1)。龙宝可以边转头边说话，小克的提腰带动作按定稿节奏播放。网页可直接试玩，离线 ZIP 附中英启动说明。
+
 **让 2D 角色开口说话，也能自然地换个姿态。** 口型、眨眼、呼吸、受击和刘海摆动由实时图层驱动。换姿态时播放预生成短片，到位后继续实时驱动。生成计算留在制作阶段。
 
 ![军装小克播放器使用的三张定帧。从左至右是 A 左看、D 正面、B 右看。](docs/media/claude-three-poses.jpg)
